@@ -257,6 +257,7 @@ class _NavToFAQ extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/faq');
                 Navigator.push(
                     context,
@@ -278,6 +279,7 @@ class _NavToContact extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/contact');
                 Navigator.push(
                     context,
@@ -299,6 +301,7 @@ class _NavToAbout extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/about');
                 Navigator.push(
                     context,
