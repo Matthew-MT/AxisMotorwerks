@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         "/": (BuildContext buildContext) {
           return Scaffold(
+            body: ImageHandler(),
             appBar: AppBar(
               title: const Text("Home"),
             ),

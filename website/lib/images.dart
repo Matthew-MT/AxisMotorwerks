@@ -9,7 +9,7 @@ class ImageHandler extends StatelessWidget {
                 body: Center(
                     child: Image(
                         image: AssetImage(
-                            'sample_mechanic_image.jpg'),
+                            'assets/images/sample_mechanic_image.jpg'),
                 ),
             ),
         );
