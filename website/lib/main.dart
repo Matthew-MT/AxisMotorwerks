@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         "/": (BuildContext buildContext) {
           return Scaffold(
             backgroundColor: Colors.indigo,
-            body: Column(children: <Widget>[
+            body: Column(children: const <Widget>[
               HomeNavigationBar()
             ]),
             appBar: AppBar(
