@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
           return AboutNavigationBar();
         },
         "/pricing": (BuildContext buildContext) {
-              return PricingNavigationBar();
+          return PricingNavigationBar();
         },
         "/contact": (BuildContext buildContext) {
-              return ContactNavigationBar();
+          return ContactNavigationBar();
         },
         "/faq": (BuildContext buildContext) {
-              return FAQNavigationBar();
+          return FAQNavigationBar();
         }      
       },
     );

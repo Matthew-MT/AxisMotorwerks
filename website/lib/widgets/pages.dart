@@ -13,6 +13,7 @@ class HomeNavigationBar extends StatelessWidget {
             appBar: AppBar(
                 title:const Text('Home')
             ),
+            backgroundColor: Colors.indigo,
             body: Column(children: <Widget>[
                 Container(
                     height: 100,
@@ -53,6 +54,7 @@ class PricingNavigationBar extends StatelessWidget {
             appBar: AppBar(
                 title: const Text('Pricing')
             ),
+            backgroundColor: Colors.green,
             body: Column(children:<Widget>[
                 Container(
                     height: 100,
@@ -93,6 +95,7 @@ class FAQNavigationBar extends StatelessWidget {
             appBar: AppBar(
                 title: const Text('FAQ')
             ),
+            backgroundColor: Colors.yellow,
             body: Column(children:<Widget>[
                 Container(
                     height: 100,
@@ -133,6 +136,7 @@ class AboutNavigationBar extends StatelessWidget {
             appBar: AppBar(
                 title: const Text('About')
             ),
+            backgroundColor: Colors.orange,
             body: Column(children:<Widget>[
                 Container(
                     height: 100,
@@ -173,6 +177,7 @@ class ContactNavigationBar extends StatelessWidget {
             appBar: AppBar(
                 title: const Text('Contact')
             ),
+            backgroundColor: Colors.red,
             body: Column(children:<Widget>[
                 Container(
                     height: 100,
@@ -213,7 +218,6 @@ class _NavToHome extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/');
                 Navigator.push(
                     context,
@@ -235,7 +239,6 @@ class _NavToPricing extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/pricing');
                 Navigator.push(
                     context,
@@ -257,7 +260,6 @@ class _NavToFAQ extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/faq');
                 Navigator.push(
                     context,
@@ -279,7 +281,6 @@ class _NavToContact extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/contact');
                 Navigator.push(
                     context,
@@ -301,7 +302,6 @@ class _NavToAbout extends StatelessWidget {
         return ElevatedButton(
             
             onPressed: ()   {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/about');
                 Navigator.push(
                     context,
