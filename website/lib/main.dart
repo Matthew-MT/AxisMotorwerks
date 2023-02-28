@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './widgets/navigation_bar.dart';
+import './widgets/pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,23 +15,14 @@ class MyApp extends StatelessWidget {
       title: "Axis Motorwerks",
       routes: <String, WidgetBuilder>{
         "/": (BuildContext buildContext) {
-          return Scaffold(
-            backgroundColor: Colors.indigo,
-            body: Column(children: <Widget>[
-              HomeNavigationBar()
-            ]),
-            appBar: AppBar(
-              title: const Text("Home"),
-            ),
-          );
+          return HomeNavigationBar();
         },
         "/about": (BuildContext buildContext) {
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text("About"),
-            ),
-          );
-        }
+          return AboutNavigationBar();
+        },
+        "/pricing": (BuildContext buildContext) {
+              return PricingNavigationBar();
+        },
       },
     );
   }

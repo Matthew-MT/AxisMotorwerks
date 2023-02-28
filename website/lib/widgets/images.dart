@@ -5,13 +5,12 @@ class ImageHandler extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return Scaffold(
-                //appBar: AppBar( title: Text('Axis Motorwerks')),
                 body: Center(
                     child: Container(
                         child: Image.asset(
                             'assets/images/sample_mechanic_image.jpg',
                             height: 100,
-                            width: 200,
+                            width: 180,
                             fit: BoxFit.fitWidth,),
                 ),
             ),
