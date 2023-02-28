@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './images.dart';
+import './widgets/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         "/": (BuildContext buildContext) {
           return Scaffold(
-            body: ImageHandler(),
+            backgroundColor: Colors.blue,
+            body: Column(children: <Widget>[
+              HomeNavigationBar()
+            ]),
             appBar: AppBar(
               title: const Text("Home"),
             ),
