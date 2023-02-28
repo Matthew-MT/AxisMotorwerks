@@ -17,9 +17,11 @@ class MyApp extends StatelessWidget {
         "/": (BuildContext buildContext) {
           return Scaffold(
             backgroundColor: Colors.indigo,
-            body: Column(children: const <Widget>[
-              HomeNavigationBar()
-            ]),
+            body: Column(
+              children: const <Widget>[
+                HomeNavigationBar()
+              ]
+            ),
             appBar: AppBar(
               title: const Text("Home"),
             ),
