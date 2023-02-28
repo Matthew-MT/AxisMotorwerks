@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "App",
+      title: "Axis Motorwerks",
       routes: <String, WidgetBuilder>{
         "/": (BuildContext buildContext) {
           return Scaffold(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.indigo,
             body: Column(children: <Widget>[
               HomeNavigationBar()
             ]),

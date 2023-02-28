@@ -11,13 +11,14 @@ class HomeNavigationBar extends StatelessWidget {
             child: Row(
                 children: <Widget>[
                     SizedBox(
-                        height: 80,
-                        width: 150,
+                        height: 100,
+                        width: 200,
                         child: ImageHandler(),
                     ),
                     Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
+                            SizedBox(width: 60,),
                             _NavigationItem('FAQ'),
                             SizedBox(width: 60,),
                             _NavigationItem('Pricing'),
