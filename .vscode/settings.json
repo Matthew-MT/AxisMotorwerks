@@ -1,8 +1,0 @@
-{
-    "[dart]": {
-        "editor.defaultFormatter": "Dart-Code.dart-code",
-        "editor.detectIndentation": false,
-        "editor.tabSize": 4
-    },
-    "editor.detectIndentation": false
-}
