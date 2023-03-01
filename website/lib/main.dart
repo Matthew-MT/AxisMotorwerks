@@ -15,19 +15,19 @@ class MyApp extends StatelessWidget {
       title: "Axis Motorwerks",
       routes: <String, WidgetBuilder>{
         "/": (BuildContext buildContext) {
-          return HomeNavigationBar();
+          return HomePage();
         },
         "/about": (BuildContext buildContext) {
-          return AboutNavigationBar();
+          return AboutPage();
         },
         "/pricing": (BuildContext buildContext) {
-          return PricingNavigationBar();
+          return PricingPage();
         },
         "/contact": (BuildContext buildContext) {
-          return ContactNavigationBar();
+          return ContactPage();
         },
         "/faq": (BuildContext buildContext) {
-          return FAQNavigationBar();
+          return FaqPage();
         }      
       },
     );

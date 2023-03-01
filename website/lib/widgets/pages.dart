@@ -4,8 +4,8 @@ import './images.dart';
 //I would like to find a way to create pages based on title passed to _Nav_..._() method,
 //as it would be much more efficent and less code, but havent figured out switch statements yet
 
-class HomeNavigationBar extends StatelessWidget {
-    const HomeNavigationBar({super.key});
+class HomePage extends StatelessWidget {
+    const HomePage({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -45,8 +45,8 @@ class HomeNavigationBar extends StatelessWidget {
     }
 }
 
-class PricingNavigationBar extends StatelessWidget {
-    const PricingNavigationBar({super.key});
+class PricingPage extends StatelessWidget {
+    const PricingPage({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -73,9 +73,9 @@ class PricingNavigationBar extends StatelessWidget {
                                     SizedBox(width: 40,),
                                     _NavToAbout('About'),
                                     SizedBox(width: 40,),
-                                    _NavToPricing('Contact'),
+                                    _NavToContact('Contact'),
                                     SizedBox(width: 40,),
-                                    _NavToContact('FAQ'),
+                                    _NavToFAQ('FAQ'),
                                 ],
                             ),
                         ],
@@ -86,8 +86,8 @@ class PricingNavigationBar extends StatelessWidget {
     }
 }
 
-class FAQNavigationBar extends StatelessWidget {
-    const FAQNavigationBar({super.key});
+class FaqPage extends StatelessWidget {
+    const FaqPage({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -127,8 +127,8 @@ class FAQNavigationBar extends StatelessWidget {
     }
 }
 
-class AboutNavigationBar extends StatelessWidget {
-    const AboutNavigationBar({super.key});
+class AboutPage extends StatelessWidget {
+    const AboutPage({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -168,8 +168,8 @@ class AboutNavigationBar extends StatelessWidget {
     }
 }
 
-class ContactNavigationBar extends StatelessWidget {
-    const ContactNavigationBar({super.key});
+class ContactPage extends StatelessWidget {
+    const ContactPage({super.key});
 
     @override
     Widget build(BuildContext context) {
@@ -223,7 +223,7 @@ class _NavToHome extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                        const HomeNavigationBar()));
+                        const HomePage()));
             },
             child: Text(title),
         );
@@ -244,7 +244,7 @@ class _NavToPricing extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                        const PricingNavigationBar()));
+                        const PricingPage()));
             },
             child: Text(title),
         );
@@ -265,7 +265,7 @@ class _NavToFAQ extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                        FAQNavigationBar()));
+                        FaqPage()));
             },
             child: Text(title),
         );
@@ -286,9 +286,13 @@ class _NavToContact extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                        ContactNavigationBar()));
+                        ContactPage()));
             },
             child: Text(title),
+            /*
+            style: ButtonStyle(
+                backgroundColor:  MaterialStateProperty.all(Colors.red)),
+                */
         );
     }
 }
@@ -307,7 +311,7 @@ class _NavToAbout extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                        AboutNavigationBar()));
+                        AboutPage()));
             },
             child: Text(title),
         );
