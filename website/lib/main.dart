@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/pages.dart';
+// import './widgets/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,21 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Axis Motorwerks",
       routes: <String, WidgetBuilder>{
-        "/": (BuildContext buildContext) {
-          return HomePage();
-        },
-        "/about": (BuildContext buildContext) {
-          return AboutPage();
-        },
-        "/pricing": (BuildContext buildContext) {
-          return PricingPage();
-        },
-        "/contact": (BuildContext buildContext) {
-          return ContactPage();
-        },
-        "/faq": (BuildContext buildContext) {
-          return FaqPage();
-        }      
+        "/": (BuildContext buildContext) => const HomePage(),
+        "/about": (BuildContext buildContext) => const AboutPage(),
+        "/pricing": (BuildContext buildContext) => const PricingPage(),
+        "/contact": (BuildContext buildContext) => const ContactPage(),
+        "/faq": (BuildContext buildContext) => const FaqPage(),
       },
     );
   }
