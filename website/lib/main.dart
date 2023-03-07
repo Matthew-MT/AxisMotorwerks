@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
-import './widgets/pages.dart';
-// import './widgets/page.dart';
+// import './widgets/pages.dart';
+import './widgets/page.dart';
+
+final List<SinglePage> pages = [
+  const SinglePage(
+    name: "Home",
+    route: "/",
+  ),
+  const SinglePage(
+    name: "About",
+    route: "/about",
+  )
+];
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Axis Motorwerks",
-      routes: <String, WidgetBuilder>{
-        "/": (BuildContext buildContext) => const HomePage(),
-        "/about": (BuildContext buildContext) => const AboutPage(),
-        "/pricing": (BuildContext buildContext) => const PricingPage(),
-        "/contact": (BuildContext buildContext) => const ContactPage(),
-        "/faq": (BuildContext buildContext) => const FaqPage(),
-      },
+      routes: {for (SinglePage page in pages) page.route: (BuildContext buildContext) => page.body},
     );
   }
 }
