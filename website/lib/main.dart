@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import './widgets/pages.dart';
 import './widgets/page.dart';
 
 final List<SinglePage> pages = [
@@ -14,18 +13,15 @@ final List<SinglePage> pages = [
 ];
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Axis Motorwerks",
-      routes: {for (SinglePage page in pages) page.route: (BuildContext buildContext) => page.body},
-    );
-  }
+  State<StatefulWidget> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
 }
