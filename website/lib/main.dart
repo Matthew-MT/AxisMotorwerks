@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/appointment.dart';
 import './widgets/page.dart';
 
 final List<SinglePage> pages = [
@@ -9,7 +10,12 @@ final List<SinglePage> pages = [
   const SinglePage(
     name: "About",
     route: "/about",
-  )
+  ),
+  const SinglePage(
+    name: "Book Appointment",
+    route: "/appointment",
+    body: BookAppointment(),
+  ),
 ];
 
 void main() {
