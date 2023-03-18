@@ -10,11 +10,11 @@ final List<SinglePage> pages = [
   const SinglePage(
     name: "About",
     route: "/about",
-  )
+  ),
   const SinglePage(
-    name: "Book Appointment"
-    route: "/appointment"
-    body: BookAppointment()
+    name: "Book Appointment",
+    route: "/appointment",
+    body: BookAppointment(),
   )
 ];
 

@@ -30,7 +30,7 @@ class _AppointmentState extends State<BookAppointment> {
 
     Widget build(BuildContext context){
         return Scaffold(
-            body: Column(
+            body:Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                     const Text(
@@ -46,7 +46,7 @@ class _AppointmentState extends State<BookAppointment> {
                         autofocus: true,
                     ),
                 ],
-            ),
+            )
         );
     }
 
