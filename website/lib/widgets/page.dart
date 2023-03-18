@@ -5,6 +5,7 @@ class SinglePage extends StatelessWidget {
   final String route;
   final Color color;
   final Widget body;
+
   const SinglePage({
     this.name = "Page",
     this.route = "/",
@@ -26,3 +27,5 @@ class SinglePage extends StatelessWidget {
     );
   }
 }
+
+class SinglePage2 
