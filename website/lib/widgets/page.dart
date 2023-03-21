@@ -27,5 +27,3 @@ class SinglePage extends StatelessWidget {
     );
   }
 }
-
-class SinglePage2 
