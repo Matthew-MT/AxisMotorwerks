@@ -30,4 +30,12 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'Books App',
+      routerDelegate: _routerDelegate,
+      routeInformationParser: _routeInformationParser,
+    );
+  }
 }
