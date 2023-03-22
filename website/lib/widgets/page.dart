@@ -28,4 +28,4 @@ class SinglePage extends StatelessWidget {
   }
 }
 
-class SinglePage2 
+// class SinglePage2 
