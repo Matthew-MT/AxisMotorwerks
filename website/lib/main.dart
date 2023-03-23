@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/appointment.dart';
+import './pages/home.dart';
 
 class PageData {
   final String name;
@@ -25,7 +26,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   // Add pages here
   final List<PageData> pages = [
-    PageData.home(body: const Text("Home")),
+    PageData.home(body: const Homepage()),
     PageData.basic(name: "About", body: const Text("About us")),
     PageData.basic(name: "Book Appointment", body: const BookAppointment()),
   ];
