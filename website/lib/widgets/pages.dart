@@ -45,8 +45,8 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ])
+        ),
+      ]),
     );
   }
 }
@@ -94,8 +94,8 @@ class PricingPage extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ])
+        ),
+      ]),
     );
   }
 }
@@ -141,8 +141,8 @@ class FaqPage extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ])
+        ),
+      ]),
     );
   }
 }
@@ -188,8 +188,8 @@ class AboutPage extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ])
+        ),
+      ]),
     );
   }
 }
@@ -235,8 +235,8 @@ class ContactPage extends StatelessWidget {
               ),
             ],
           ),
-        )
-      ])
+        ),
+      ]),
     );
   }
 }
