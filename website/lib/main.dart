@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './pages/appointment.dart';
 import './pages/home.dart';
 import './pages/pricing.dart';
+
 
 
 class PageData {
@@ -30,7 +30,6 @@ class _AppState extends State<App> {
   final List<PageData> pages = [
     PageData.home(body: const Homepage()),
     PageData.basic(name: "About", body: const Text("About us")),
-    PageData.basic(name: "Book Appointment", body: const BookAppt()),
     PageData.basic(name: "Pricing", body: const Pricing()),
   ];
 
@@ -55,9 +54,11 @@ class _AppState extends State<App> {
                 ),
               ),
             ),
-            leading: Image.asset('assets/images/logo.png'),
-            leadingWidth: 100, 
+            leading: Image.asset(
+              'images/logo.jpg'),
+            leadingWidth: 100,
             actions: [for (var pageData in pages) TextButton(
+                
                 style: TextButton.styleFrom(foregroundColor: Colors.white70),
                 
                 onPressed:

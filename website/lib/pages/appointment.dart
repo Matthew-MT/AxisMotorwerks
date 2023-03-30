@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:website/widgets/book.dart';
+import 'package:website/widgets/calender.dart';
 
 List<String> dates = <String>[
   'Monday',
@@ -19,56 +21,6 @@ List<String> times = <String>[
 '4:00 PM',
 ];
 
-class BookAppointment extends StatefulWidget {
-  const BookAppointment({super.key});
-
-  final String title = "Book";
-
-  @override
-  State<BookAppointment> createState() => _AppointmentState();
-}
-
-class _AppointmentState extends State<BookAppointment> {
-  String _content = '';
-  final myController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    // Start listening to changes.
-    myController.addListener(_handleChange);
-  }
-
-  void _handleChange() {
-    setState(() {
-      _content = myController.text;
-    });
-  }
-
-    Widget build(BuildContext context){
-        return Scaffold(
-            body:Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                    const Text(
-                        'Book Appointment'
-                    ),
-                    TextField(
-                        onChanged: (String value){
-                            setState(()
-                            {
-                                _content = value;
-                            });
-                        },
-                        autofocus: true,
-                    ),
-                ],
-            ),
-        );
-    }
-}
-
-
 class BookAppt extends StatefulWidget {
   const BookAppt({super.key});
 
@@ -79,28 +31,60 @@ class BookAppt extends StatefulWidget {
 }
 
 class _BookApptState extends State<BookAppt> {
-  String _content = '';
-  final myController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    // Start listening to changes.
-    myController.addListener(_handleChange);
-  }
-
-  void _handleChange() {
-    setState(() {
-      _content = myController.text;
-    });
-  }
-
+  
+    @override
     Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final Color oddItemColor = colorScheme.primary.withOpacity(0.05);
-    final Color evenItemColor = colorScheme.primary.withOpacity(0.15);
-    const int tabsCount = 5;
+      final
+        width = MediaQuery.of(context).size.width;
 
+    return Scaffold(
+      resizeToAvoidBottomInset : false,
+      appBar: AppBar(
+          title: const Text('When Would You Like To Visit?'),
+          notificationPredicate: (ScrollNotification notification) {
+            return notification.depth == 1;
+          },
+      ),
+      
+      body: SingleChildScrollView(
+        child: Container(
+        alignment: Alignment.topLeft,
+      margin: EdgeInsets.only(
+        left: width > 1024 ? (width - 1024) / 4 : 0,
+        right: width > 1024 ? (width - 1024) / 4 : 0,
+      ),
+      padding: EdgeInsets.all(width / 16),
+      decoration: BoxDecoration(
+        color: Colors.lightBlue[50],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            width: width,
+            child: const Calender(),
+          ),
+          const Divider(
+            height: 100.0
+          ),
+          SizedBox(
+            width: width,
+            child: const BookAppointment(),
+          ),
+        ],
+      ),
+      ),
+      ),
+    );
+    /*
     return DefaultTabController(
       initialIndex: 1,
       length: tabsCount,
@@ -145,19 +129,19 @@ class _BookApptState extends State<BookAppt> {
               itemBuilder: (BuildContext context, int index) {
                 return TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 0, 0, 0),
-                    shadowColor: Color.fromARGB(255, 71, 67, 67),
+                    foregroundColor:const Color.fromARGB(255, 0, 0, 0),
+                    shadowColor:const Color.fromARGB(255, 71, 67, 67),
                     backgroundColor: index.isOdd ? oddItemColor : evenItemColor,
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookAppointment(),
+                        builder: (context) => const BookAppointment(),
                       ),
                     );
                   },
-                  child: Text('${times[index]}'),
+                  child: Text(times[index]),
                 );
               },
             ),
@@ -167,19 +151,19 @@ class _BookApptState extends State<BookAppt> {
               itemBuilder: (BuildContext context, int index) {
                 return TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 0, 0, 0),
-                    shadowColor: Color.fromARGB(255, 71, 67, 67),
+                    foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    shadowColor: const Color.fromARGB(255, 71, 67, 67),
                     backgroundColor: index.isOdd ? oddItemColor : evenItemColor,
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookAppointment(),
+                        builder: (context) => const BookAppointment(),
                       ),
                     );
                   },
-                  child: Text('${times[index]}'),
+                  child: Text(times[index]),
                 );
               },
             ),
@@ -189,19 +173,19 @@ class _BookApptState extends State<BookAppt> {
               itemBuilder: (BuildContext context, int index) {
                 return TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 0, 0, 0),
-                    shadowColor: Color.fromARGB(255, 71, 67, 67),
+                    foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    shadowColor: const Color.fromARGB(255, 71, 67, 67),
                     backgroundColor: index.isOdd ? oddItemColor : evenItemColor,
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookAppointment(),
+                        builder: (context) => const BookAppointment(),
                       ),
                     );
                   },
-                  child: Text('${times[index]}'),
+                  child: Text(times[index]),
 
                 );
               },
@@ -212,19 +196,19 @@ class _BookApptState extends State<BookAppt> {
               itemBuilder: (BuildContext context, int index) {
                 return TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 0, 0, 0),
-                    shadowColor: Color.fromARGB(255, 71, 67, 67),
+                    foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    shadowColor: const Color.fromARGB(255, 71, 67, 67),
                     backgroundColor: index.isOdd ? oddItemColor : evenItemColor,
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookAppointment(),
+                        builder: (context) => const BookAppointment(),
                       ),
                     );
                   },
-                  child: Text('${times[index]}'),
+                  child: Text(times[index]),
                 );
               },
             ),
@@ -234,19 +218,19 @@ class _BookApptState extends State<BookAppt> {
               itemBuilder: (BuildContext context, int index) {
                 return TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 0, 0, 0),
-                    shadowColor: Color.fromARGB(255, 71, 67, 67),
+                    foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    shadowColor: const Color.fromARGB(255, 71, 67, 67) ,
                     backgroundColor: index.isOdd ? oddItemColor : evenItemColor,
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BookAppointment(),
+                        builder: (context) => const BookAppointment(),
                       ),
                     );
                   },
-                  child: Text('${times[index]}'),
+                  child: Text(times[index]),
                 );
               },
             ),
@@ -254,6 +238,7 @@ class _BookApptState extends State<BookAppt> {
         ),
       ),
     );
+    */
   } 
 }
 
