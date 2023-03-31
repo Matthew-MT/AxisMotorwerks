@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import './pages/home.dart';
 import './pages/pricing.dart';
-
-
+import './pages/about.dart';
+import './pages/contact.dart';
 
 class PageData {
   final String name;
@@ -29,8 +30,9 @@ class _AppState extends State<App> {
   // Add pages here
   final List<PageData> pages = [
     PageData.home(body: const Homepage()),
-    PageData.basic(name: "About", body: const Text("About us")),
+    PageData.basic(name: "About", body: const About()),
     PageData.basic(name: "Pricing", body: const Pricing()),
+    PageData.basic(name: "Contact", body: const Contact()),
   ];
 
   @override
@@ -48,14 +50,21 @@ class _AppState extends State<App> {
                   end: Alignment.bottomRight,
                   colors: <Color>[
                     Color.fromARGB(255, 0, 0, 0),
+                    Color.fromARGB(255, 99, 0, 0),
                     Color.fromARGB(255, 252, 47, 47),
                     Color.fromARGB(255, 255, 255, 92),
                   ],
                 ),
               ),
             ),
-            leading: Image.asset('images/logo.jpg'),
-            // leadingWidth: 100,
+            leading: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => Navigator.pushNamed(buildContext, "/"),
+                child: Image.asset('images/logo.jpg'),
+              ),
+            ),
+            leadingWidth: 100,
             actions: [for (var pageData in pages) TextButton(
               style: TextButton.styleFrom(foregroundColor: Colors.white70),
               onPressed:
@@ -68,6 +77,6 @@ class _AppState extends State<App> {
           body: pageData.body,
         );
       }},
-    );
+    ).animate().fadeIn(duration: 400.ms);
   }
 }

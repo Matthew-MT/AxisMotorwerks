@@ -38,6 +38,7 @@ dependencies:
   responsive_builder: ^0.1.2
   table_calendar: ^3.0.2
   booking_calendar: ^1.1.9
+  flutter_animate: ^4.1.1+1
 
 dev_dependencies:
   flutter_test:
