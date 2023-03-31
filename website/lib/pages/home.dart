@@ -28,7 +28,7 @@ class Homepage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             "Welcome to Axis Motorwerks!",
             style: TextStyle(
@@ -38,6 +38,7 @@ class Homepage extends StatelessWidget {
           ),
           Divider(),
           Text("Lorem ipsum dolor sit amet"),
+          Image.asset("images/logo.jpg"),
         ]
       ),
     );

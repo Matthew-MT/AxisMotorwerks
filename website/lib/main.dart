@@ -54,18 +54,15 @@ class _AppState extends State<App> {
                 ),
               ),
             ),
-            leading: Image.asset(
-              'images/logo.jpg'),
-            leadingWidth: 100,
+            leading: Image.asset('images/logo.jpg'),
+            // leadingWidth: 100,
             actions: [for (var pageData in pages) TextButton(
-                
-                style: TextButton.styleFrom(foregroundColor: Colors.white70),
-                
-                onPressed:
-                  ModalRoute.of(buildContext)?.settings.name != pageData.path
-                  ? () => Navigator.pushNamed(buildContext, pageData.path)
-                  : null,
-                child: Text(pageData.name),
+              style: TextButton.styleFrom(foregroundColor: Colors.white70),
+              onPressed:
+                ModalRoute.of(buildContext)?.settings.name != pageData.path
+                ? () => Navigator.pushNamed(buildContext, pageData.path)
+                : null,
+              child: Text(pageData.name),
             )],
           ),
           body: pageData.body,
