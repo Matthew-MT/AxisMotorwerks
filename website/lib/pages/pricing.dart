@@ -8,37 +8,66 @@ class Pricing extends StatelessWidget {
     final
       width = MediaQuery.of(context).size.width;
     return Container(
-      alignment: Alignment.topLeft,
-      padding: EdgeInsets.all(width / 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
-                    Color.fromARGB(255, 252, 47, 47).withOpacity(0.5),
-                    Color.fromARGB(255, 255, 255, 92).withOpacity(0.5),
-                  ],
-                ),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
-            spreadRadius: 20,
-            blurRadius: 7,
-            offset: const Offset(0, 3), // changes position of shadow
+          begin: Alignment.bottomLeft,
+          end: Alignment.bottomRight,
+          colors: <Color>[
+            const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+            const Color.fromARGB(255, 252, 47, 47).withOpacity(0.5),
+            const Color.fromARGB(255, 255, 255, 92).withOpacity(0.5),
+          ],
+        ),
+      ),
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(
+              top: width / 32,
+            ),
+            height: 120,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.black.withOpacity(0.7),
+            child: const Text(
+              "Pricing",
+              textAlign: TextAlign.center,
+            
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 80,
+                height: 1.33,
+                color: Colors.white,
+                letterSpacing: 2,
+              ),
+            ),
           ),
         ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Icon(Icons.home),
-          Icon(Icons.leaderboard),
-          Icon(Icons.local_offer),
-          Text("Lorem ipsum dolor sit amet", style: TextStyle(fontSize: 20.0),),
-        ]
       ),
     );
   }
 }
+
+
+/**
+ padding: EdgeInsets.all(width / 16),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.bottomRight,
+                      colors: <Color>[
+                        const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+                        const Color.fromARGB(255, 252, 47, 47).withOpacity(0.5),
+                        const Color.fromARGB(255, 255, 255, 92).withOpacity(0.5),
+                      ],
+                    ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+                spreadRadius: 20,
+                blurRadius: 7,
+                offset: const Offset(0, 3), // changes position of shadow
+              ),
+            ],
+          ),
+ */
