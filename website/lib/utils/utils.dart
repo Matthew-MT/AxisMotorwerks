@@ -1,5 +1,7 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:async';
+import 'dart:io';
 
 Future<Size> getImageSize(Image image) {
   Completer<Size> completer = Completer();
@@ -13,4 +15,10 @@ Future<Size> getImageSize(Image image) {
     ),
   );
   return completer.future;
+}
+
+Future<dynamic> readJSONFile(String filename, BuildContext context) async {
+  print("Name: $filename");
+  print("File: ${await File(filename).readAsString()}");
+  return jsonDecode(await DefaultAssetBundle.of(context).loadString(filename));
 }

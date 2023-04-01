@@ -1,7 +1,6 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import '../widgets/banner_page.dart';
-import '../utils/utils.dart';
+import '../widgets/reviews.dart';
 
 class Homepage extends StatelessWidget {
   final double appBarHeight;
@@ -9,19 +8,10 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MediaQueryData query = MediaQuery.of(context);
-    final double width = query.size.width;
-    final double height = query.size.height - appBarHeight;
-    final Image bannerImage = Image.asset(
-      "images/sample_mechanic_image.jpg",
-      width: width,
-      fit: BoxFit.cover,
-    );
-    final controller = ScrollController();
-
     return const BannerPage(
       bannerSource: "images/sample_mechanic_image.jpg",
       children: [
+        ReviewCarousel(),
         Text(
           "Welcome to Axis Motorwerks!",
           style: TextStyle(

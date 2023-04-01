@@ -79,10 +79,10 @@ class _BannerPageContentState extends State<BannerPageContent> {
       > widget.height
       ? widget.controller.offset >= widget.offset
         ? widget.height
-        - (
-          widget.imageSize!.height
-          * (widget.width / (widget.imageSize?.width ?? 1))
-        )
+          - (
+            widget.imageSize!.height
+            * (widget.width / (widget.imageSize?.width ?? 1))
+          )
         : (
           widget.height
           - (
@@ -90,7 +90,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
             * (widget.width / (widget.imageSize?.width ?? 1))
           )
         ) * (widget.controller.offset / widget.offset)
-        : 0;
+      : 0;
   });
 
   @override
@@ -118,8 +118,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
           controller: widget.controller,
           child: Container(
             alignment: Alignment.topLeft,
-            constraints:
-                BoxConstraints(minHeight: widget.height - widget.offset),
+            constraints: BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
               top: widget.offset,
               left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
