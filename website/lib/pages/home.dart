@@ -50,7 +50,9 @@ class HomepageContent extends StatefulWidget {
     required this.imageSize,
     required this.controller,
     super.key,
-  }) : offset = min((imageSize?.height ?? 0) * (width / (imageSize?.width ?? 1)), height / 3);
+  }) : offset = min(
+            (imageSize?.height ?? 0) * (width / (imageSize?.width ?? 1)),
+            height / 3);
 
   @override
   State<HomepageContent> createState() => _HomepageContentState();
@@ -61,19 +63,22 @@ class _HomepageContentState extends State<HomepageContent> {
 
   void listenToScroll() => setState(() {
     bannerTop =
-      (widget.imageSize?.height ?? 0) * (widget.width / (widget.imageSize?.width ?? 1)) > widget.height
-      ?
-        widget.controller.offset >= widget.offset
-        ? widget.height - (widget.imageSize!.height * (widget.width / (widget.imageSize?.width ?? 1)))
-        : (widget.height - (widget.imageSize!.height * (widget.width / (widget.imageSize?.width ?? 1)))) * (widget.controller.offset / widget.offset)
+      (widget.imageSize?.height ?? 0) *
+      (widget.width / (widget.imageSize?.width ?? 1))
+      > widget.height
+      ? widget.controller.offset >= widget.offset
+        ? widget.height - (
+          widget.imageSize!.height *
+          (widget.width / (widget.imageSize?.width ?? 1))
+        )
+        : (
+          widget.height - (
+            widget.imageSize!.height *
+            (widget.width / (widget.imageSize?.width ?? 1))
+          )
+        ) * (widget.controller.offset / widget.offset)
       : 0;
-    print("bannerTop: $bannerTop");
   });
-
-  @override
-  _HomepageContentState() {
-    // widget.controller.addListener(listenToScroll);
-  }
 
   @override
   void initState() {
@@ -89,6 +94,7 @@ class _HomepageContentState extends State<HomepageContent> {
 
   @override
   Widget build(BuildContext context) {
+    if (!widget.controller.hasListeners) widget.controller.addListener(listenToScroll);
     return Stack(
       children: [
         Positioned(
@@ -99,7 +105,8 @@ class _HomepageContentState extends State<HomepageContent> {
           controller: widget.controller,
           child: Container(
             alignment: Alignment.topLeft,
-            constraints: BoxConstraints(minHeight: widget.height - widget.offset),
+            constraints:
+                BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
               top: widget.offset,
               left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
@@ -118,19 +125,18 @@ class _HomepageContentState extends State<HomepageContent> {
               ],
             ),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "Welcome to Axis Motorwerks!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Welcome to Axis Motorwerks!",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
                   ),
-                ),
-                Divider(),
-                Text(
-"""
+                  Divider(),
+                  Text("""
 Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
 
 Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
@@ -211,9 +217,8 @@ Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. V
 
 Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
 """
-                ),
-              ]
-            ),
+              ),
+            ]),
           ),
         ),
       ],
