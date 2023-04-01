@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:website/main.dart';
 import 'package:website/pages/page_data.dart';
 
   AppBar mobileAppbar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
@@ -36,7 +35,6 @@ import 'package:website/pages/page_data.dart';
 , 
     );
   }
-
   
   Drawer mobileDrawer(BuildContext context) {
     return Drawer(

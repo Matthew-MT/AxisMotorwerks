@@ -14,8 +14,6 @@ class PageData {
   PageData.home({required this.body}) : name = "Home", path = "/";
 }
 
-
-
 final List<PageData> pages = [
     PageData.home(body: const Homepage()),
     PageData.basic(name: "About", body: const About()),

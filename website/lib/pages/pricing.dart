@@ -47,27 +47,3 @@ class Pricing extends StatelessWidget {
     );
   }
 }
-
-
-/**
- padding: EdgeInsets.all(width / 16),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[
-                        const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
-                        const Color.fromARGB(255, 252, 47, 47).withOpacity(0.5),
-                        const Color.fromARGB(255, 255, 255, 92).withOpacity(0.5),
-                      ],
-                    ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
-                spreadRadius: 20,
-                blurRadius: 7,
-                offset: const Offset(0, 3), // changes position of shadow
-              ),
-            ],
-          ),
- */
