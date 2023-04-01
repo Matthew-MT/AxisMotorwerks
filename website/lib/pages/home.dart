@@ -1,50 +1,119 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
+import '../widgets/banner_page.dart';
+import '../utils/utils.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  final double appBarHeight;
+  const Homepage({required this.appBarHeight, super.key});
 
   @override
   Widget build(BuildContext context) {
-    final
-      width = MediaQuery.of(context).size.width;
-    return ListView(
-      children: <Widget> [
-         Container(
-        alignment: Alignment.topLeft,
-        margin: EdgeInsets.only(
-          left: width > 1024 ? (width - 1024) / 4 : 0,
-          right: width > 1024 ? (width - 1024) / 4 : 0,
+    final MediaQueryData query = MediaQuery.of(context);
+    final double width = query.size.width;
+    final double height = query.size.height - appBarHeight;
+    final Image bannerImage = Image.asset(
+      "images/sample_mechanic_image.jpg",
+      width: width,
+      fit: BoxFit.cover,
+    );
+    final controller = ScrollController();
+
+    return const BannerPage(
+      bannerSource: "images/sample_mechanic_image.jpg",
+      children: [
+        Text(
+          "Welcome to Axis Motorwerks!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
         ),
-        padding: EdgeInsets.all(width / 16),
-        decoration: BoxDecoration(
-          color: Colors.lightBlue[50],
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: const Offset(0, 3), // changes position of shadow
-            ),
-          ],
+        Divider(),
+        Text(
+"""
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+
+Ipsam minus facere dolorem. Exercitationem consequatur illum officia culpa delectus quisquam in veniam. Reprehenderit doloribus qui iure et et fugiat consequatur nam.
+
+Reiciendis aut corrupti rem. Voluptas fugit error a veniam nobis impedit. Ut aut molestias reiciendis saepe non quos aut soluta. Vel qui delectus eveniet velit ea veniam dolores. Sit esse corrupti aut eligendi ab. Ut minima voluptatem harum qui optio.
+
+Quod dolore sed totam quis. Exercitationem dolorem sit alias repellat quisquam tempora. Iste quisquam est quisquam.
+
+Dignissimos quaerat perspiciatis iusto incidunt excepturi assumenda qui velit. Velit atque optio earum. Ut nesciunt adipisci tempora voluptatem omnis sint eos quisquam. Consequatur alias corrupti qui dolorem quia dolor illum ratione. Eius et culpa quasi.
+
+Consequatur quis qui voluptatem nulla aut. Quae labore quia nihil quisquam incidunt beatae. Exercitationem odio in similique consequatur molestiae amet dolorem iusto. Consectetur nam aut voluptatem. Ab voluptatem voluptas ducimus eius qui et.
+"""
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Welcome to Axis Motorwerks!",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
-            ),
-            Divider(),
-            const Text("Lorem ipsum dolor sit amet"),
-            Image.asset("images/logo.jpg" , width: MediaQuery.of(context).size.width, height: 800),
-          ]
-        ),
-      ),
-      ],
+      ]
     );
   }
 }
