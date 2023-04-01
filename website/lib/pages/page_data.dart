@@ -15,7 +15,7 @@ class PageData {
 }
 
 final List<PageData> pages = [
-    PageData.home(body: const Homepage()),
+    PageData.home(body: const Homepage(appBarHeight: 56)),
     PageData.basic(name: "About", body: const About()),
     PageData.basic(name: "Pricing", body: const Pricing()),
     PageData.basic(name: "Contact", body: const Contact()),
