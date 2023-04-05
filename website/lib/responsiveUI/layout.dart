@@ -9,8 +9,8 @@ class ResponsiveNavigationBar extends StatelessWidget implements PreferredSizeWi
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth > 500) {
+      builder: (buildContext, constraints) {
+        if (MediaQuery.of(buildContext).size.width > 500) {
           return desktopNav;
         } else {
           return mobileNav;

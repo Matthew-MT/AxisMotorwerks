@@ -5,8 +5,6 @@ import 'responsiveUI/layout.dart';
 import 'responsiveUI/mobile_nav.dart';
 import 'responsiveUI/desktop_nav.dart';
 
-GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
 void main() {
   runApp(const App());
 }
@@ -25,6 +23,7 @@ class _AppState extends State<App> {
     return MaterialApp(
       title: 'Books App',
       routes: {for (var pageData in pages) pageData.path: (BuildContext buildContext) {
+        GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
         return Scaffold(
           key: scaffoldKey,
           appBar: ResponsiveNavigationBar(
