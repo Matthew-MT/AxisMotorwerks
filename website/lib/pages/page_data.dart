@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'pricing.dart';
+import 'services.dart';
 import 'about.dart';
 import 'contact.dart';
 
@@ -17,6 +17,6 @@ class PageData {
 final List<PageData> pages = [
     PageData.home(body: const Homepage(appBarHeight: 56)),
     PageData.basic(name: "About", body: const About()),
-    PageData.basic(name: "Pricing", body: const Pricing()),
+    PageData.basic(name: "Services", body: const Services()),
     PageData.basic(name: "Contact", body: const Contact()),
   ];

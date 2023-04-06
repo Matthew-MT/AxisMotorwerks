@@ -50,7 +50,7 @@ import 'package:website/pages/page_data.dart';
           for (var pageData in pages) ListTile(
             title: Text(pageData.name),
             onTap: () {
-              Navigator.pushReplacementNamed(context, pageData.path);
+              Navigator.pushNamed(context, pageData.path);
             },
           ),
         ],

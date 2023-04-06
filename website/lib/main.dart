@@ -27,9 +27,12 @@ class _AppState extends State<App> {
       routes: {for (var pageData in pages) pageData.path: (BuildContext buildContext) {
         return Scaffold(
           key: scaffoldKey,
-          appBar: ResponsiveNavigationBar(
-            mobileNav: mobileAppbar(buildContext, scaffoldKey),
-            desktopNav: desktopAppbar(buildContext),
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(100),
+            child: ResponsiveNavigationBar(
+              mobileNav: mobileAppbar(buildContext, scaffoldKey),
+              desktopNav: desktopAppbar(buildContext),
+            ),
           ),
           body: pageData.body,
           drawer: mobileDrawer(buildContext),
