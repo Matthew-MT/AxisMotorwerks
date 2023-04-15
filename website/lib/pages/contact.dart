@@ -4,7 +4,8 @@ import '../widgets/banner_page.dart';
 import '../widgets/email_form.dart';
 
 class Contact extends StatelessWidget {
-  const Contact ({super.key});
+  final double appBarHeight;
+  const Contact ({required this.appBarHeight, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class Contact extends StatelessWidget {
       ),
       child:*/ //ListView
       BannerPage(
+        appBarHeight: appBarHeight,
         bannerSource: "images/porsche.jpg",
         bannerText: "Contact Us",
         //scrollDirection: Axis.vertical,

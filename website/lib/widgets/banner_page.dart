@@ -8,7 +8,7 @@ class BannerPage extends StatelessWidget {
   final String bannerText;
   final List<Widget> children;
   const BannerPage({
-    this.appBarHeight = 0,
+    required this.appBarHeight,
     required this.bannerSource,
     required this.bannerText,
     required this.children,
@@ -114,44 +114,54 @@ class _BannerPageContentState extends State<BannerPageContent> {
   Widget build(BuildContext context) {
     // ignore: invalid_use_of_protected_member
     if (!widget.controller.hasListeners) widget.controller.addListener(listenToScroll);
+    final top = widget.width / 3.5;
     return Stack(
       children: [
-        
         Stack(
-          children:<Widget>[ Positioned(
-            top: bannerTop,
-            child: widget.bannerImage,
-          ),
-          Container(
-          width: widget.width,
-          height: 30,
-          color: Colors.black.withOpacity(0.5),
-          child: Row(children: const [
-            Expanded(
-              child: Text("1105 N 1st St, Grand Junction, CO",
-            textAlign: TextAlign.center,
-              style: 
-              TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),)),
-            Expanded(
-              child: Text("970-433-7111",
-            textAlign: TextAlign.center,
-              style: 
-              TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),)),
-            Expanded(
-              child: Text("Monday - Friday, 8:00am - 5:00pm", 
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold),
-            )),
-          ]),
-        ),
-          Center(
-            child: Text(
+          children: <Widget>[
+            Positioned(
+              top: bannerTop,
+              child: widget.bannerImage,
+            ),
+            Container(
+              width: widget.width,
+              height: 30,
+              color: Colors.black.withOpacity(0.5),
+              child: Row(children: const [
+                Expanded(
+                  child: Text("1105 N 1st St, Grand Junction, CO",
+                textAlign: TextAlign.center,
+                  style: 
+                  TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),)),
+                Expanded(
+                  child: Text(
+                    "970-433-7111",
+                    textAlign: TextAlign.center,
+                    style: 
+                    TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text("Monday - Friday, 8:00am - 5:00pm", 
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+                )),
+              ]),
+            ),
+            Align(
+              alignment: AlignmentDirectional(
+                0, top + widget.appBarHeight < widget.height
+                ? ((top + widget.appBarHeight) / widget.height) - 1
+                : 0
+              ),
+              child: Text(
                 widget.bannerText,
                 style: const TextStyle(
                   fontFamily: 'Swiss',
@@ -185,7 +195,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
                   ],
                 ),
               ),
-          ),
+            ),
           ],
         ),
         SingleChildScrollView(
@@ -194,11 +204,11 @@ class _BannerPageContentState extends State<BannerPageContent> {
             alignment: Alignment.topLeft,
             constraints: BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.width/ 3.5,
+              top: top,
               //left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
               //right: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
             ),
-            //padding: EdgeInsets.all(widget.width / 16),
+            // padding: EdgeInsets.all(widget.width / 16),
             decoration: BoxDecoration(
               color: Colors.lightBlue[50],
               boxShadow: const [
