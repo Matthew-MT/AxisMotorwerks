@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
 
+
+const List<Shadow>textShadow= [
+  Shadow(
+    offset: Offset(-2, -2),
+    color: Colors.black,
+    blurRadius: 3.0
+  ),
+  Shadow(
+    offset: Offset(2, -2),
+    color: Colors.black,
+    blurRadius: 3.0
+  ),
+  Shadow(
+    offset: Offset(-2, 2),
+    color: Colors.black,
+    blurRadius: 3.0
+  ),
+  Shadow(
+    offset: Offset(2, 2),
+    color: Colors.black,
+    blurRadius: 3.0
+  ),
+];
+
 class GradientText extends StatelessWidget {
   const GradientText(
       this.text, {super.key, 

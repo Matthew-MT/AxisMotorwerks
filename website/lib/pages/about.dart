@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/text_modifier.dart';
+import '../widgets/banner_page.dart';
+
 
 class About extends StatelessWidget {
   const About ({super.key});
@@ -7,13 +10,9 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     final
       width = MediaQuery.of(context).size.width;
-    return Container(
-      height: MediaQuery.of(context).size.height * 3,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 79, 79, 79) 
-      ),
-      child: ListView(
-        scrollDirection: Axis.vertical,
+    return BannerPage(
+        bannerSource: "images/porsche.jpg",
+        bannerText: "About Us",
         children: <Widget>[
           Container(
             margin: const EdgeInsets.only(
@@ -22,70 +21,10 @@ class About extends StatelessWidget {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
+                  offset: const Offset(0, 5),
                   color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 6,
-                  blurRadius: 6
-                ),
-              ],
-            ),
-            height: (MediaQuery.of(context).size.width)/3,
-            width: MediaQuery.of(context).size.width,
-            child: Stack(
-              children: <Widget>[
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  //height: (MediaQuery.of(context).size.width)/2.25,
-                  child: Image.asset("images/logo_banner.jpg" ,
-                    fit: BoxFit.fitWidth,
-                    )),
-                    const Center(
-                      child: Text(
-                        "About Us",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 80,
-                          height: 1.33,
-                          color: Colors.white,
-                          letterSpacing: 2,
-                          shadows: [
-                            Shadow(
-                              offset: Offset(-1.5, -1.5),
-                              color: Colors.black,
-                              blurRadius: 3.0
-                            ),
-                            Shadow(
-                              offset: Offset(1.5, -1.5),
-                              color: Colors.black,
-                              blurRadius: 3.0
-                            ),
-                            Shadow(
-                              offset: Offset(-1.5, 1.5),
-                              color: Colors.black,
-                              blurRadius: 3.0
-                            ),
-                            Shadow(
-                              offset: Offset(1.5, 1.5),
-                              color: Colors.black,
-                              blurRadius: 3.0
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-              ],
-            )
-          ),
-          Container(
-            margin: const EdgeInsets.only(
-              top: 0,
-            ),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 6,
-                  blurRadius: 6
+                  spreadRadius: 20,
+                  blurRadius: 20
                 ),
               ],
             ),
@@ -96,86 +35,204 @@ class About extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: 400,
-                ),
-                const Center(
-                  child: Text(
-                    "Insert Text Here",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                      height: 1.33,
-                      color: Colors.white,
-                      letterSpacing: 2,
+                  child: Image.asset("images/carbonfiber.png" ,
+                    fit: BoxFit.fitWidth,
                     ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget> [ 
+                  Container(
+                    margin: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 4
+                        ),
+                      ],
+                    ),
+                    child: const Text("Insert image here"),
                   ),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                    const Center(
+                      child: Text(
+                        "Ryan McCallum\n...",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Swiss",
+                          fontSize: 32,
+                          height: 1.33,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             )
           ),
           Container(
-            margin: const EdgeInsets.all(32),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 100, 100, 100),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 6,
-                  blurRadius: 6,
+            margin: const EdgeInsets.only(
+              top: 0,
+            ),
+            height: (MediaQuery.of(context).size.width)/3.95,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: <Widget>[
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 400,
+                  child: Image.asset("images/carbonfiber.png" ,
+                    fit: BoxFit.fitWidth,
+                    ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget> [ 
+                    const Center(
+                      child: Text(
+                        "Ethan McCallum\n...",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Swiss",
+                          fontSize: 32,
+                          height: 1.33,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                  Container(
+                    margin: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 4
+                        ),
+                      ],
+                    ),
+                    child: const Text("Insert image here"),
+                  ),
+                  ],
                 ),
               ],
+            )
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              top: 0,
             ),
-            height: 450,
+            height: (MediaQuery.of(context).size.width)/3.95,
             width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: const [
+            child: Stack(
+              children: <Widget>[
                 SizedBox(
-                  height: 80,
+                  width: MediaQuery.of(context).size.width,
+                  height: 400,
+                  child: Image.asset("images/carbonfiber.png" ,
+                    fit: BoxFit.fitWidth,
+                    ),
                 ),
-                Text(
-                  "Ryan McCallum",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                    height: 1.33,
-                    color: Colors.white,
-                    letterSpacing: 2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget> [ 
+                  Container(
+                    margin: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 4
+                        ),
+                      ],
+                    ),
+                    child: const Text("Insert image here"),
                   ),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                    const Center(
+                      child: Text(
+                        "Claudia McCallum\n...",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Swiss",
+                          fontSize: 32,
+                          height: 1.33,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+              ],
+            )
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              top: 0,
+            ),
+            height: (MediaQuery.of(context).size.width)/3.95,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              children: <Widget>[
                 SizedBox(
-                  height: 80,
+                  width: MediaQuery.of(context).size.width,
+                  height: 400,
+                  child: Image.asset("images/carbonfiber.png" ,
+                    fit: BoxFit.fitWidth,
+                    ),
                 ),
-                Text(
-                  "Ethan McCallum",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                    height: 1.33,
-                    color: Colors.white,
-                    letterSpacing: 2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget> [ 
+                    const Center(
+                      child: Text(
+                        "Betsy Beyers\n...",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: "Swiss",
+                          fontSize: 32,
+                          height: 1.33,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 200,
+                    ),
+                  Container(
+                    margin: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 4
+                        ),
+                      ],
+                    ),
+                    child: const Text("Insert image here"),
                   ),
-                ),
-                SizedBox(
-                  height: 80,
-                ),
-                Text(
-                  "Betsy Beyers" ,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                    height: 1.33,
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
+                  ],
                 ),
               ],
             )
           ),
         ],
-      ),
     );
   }
 }
