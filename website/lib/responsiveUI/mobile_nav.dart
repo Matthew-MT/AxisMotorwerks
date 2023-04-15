@@ -4,6 +4,7 @@ import 'package:website/pages/page_data.dart';
   AppBar mobileAppbar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
     return AppBar(
       elevation: 30,
+      toolbarHeight: 100,
       flexibleSpace: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

@@ -5,10 +5,12 @@ import '../utils/utils.dart';
 class BannerPage extends StatelessWidget {
   final double appBarHeight;
   final String bannerSource;
+  final String bannerText;
   final List<Widget> children;
   const BannerPage({
     this.appBarHeight = 0,
     required this.bannerSource,
+    required this.bannerText,
     required this.children,
     super.key
   });
@@ -30,6 +32,7 @@ class BannerPage extends StatelessWidget {
       builder: (BuildContext buildContext, AsyncSnapshot<Size> snapshot) {
         return BannerPageContent(
           bannerImage: bannerImage,
+          bannerText: bannerText,
           appBarHeight: appBarHeight,
           width: width,
           height: height,
@@ -44,6 +47,7 @@ class BannerPage extends StatelessWidget {
 
 class BannerPageContent extends StatefulWidget {
   final Image bannerImage;
+  final String bannerText;
   final double appBarHeight;
   final double width;
   final double height;
@@ -53,6 +57,7 @@ class BannerPageContent extends StatefulWidget {
   final List<Widget> children;
   BannerPageContent({
     required this.bannerImage,
+    required this.bannerText,
     required this.appBarHeight,
     required this.width,
     required this.height,
@@ -110,9 +115,77 @@ class _BannerPageContentState extends State<BannerPageContent> {
     if (!widget.controller.hasListeners) widget.controller.addListener(listenToScroll);
     return Stack(
       children: [
-        Positioned(
-          top: bannerTop,
-          child: widget.bannerImage,
+        
+        Stack(
+          children:<Widget>[ Positioned(
+            top: bannerTop,
+            child: widget.bannerImage,
+          ),
+          Container(
+          width: widget.width,
+          height: 30,
+          color: Colors.black.withOpacity(0.5),
+          child: Row(children: const [
+            Expanded(
+              child: Text("1105 N 1st St, Grand Junction, CO",
+            textAlign: TextAlign.center,
+              style: 
+              TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold),)),
+            Expanded(
+              child: Text("970-433-7111",
+            textAlign: TextAlign.center,
+              style: 
+              TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold),)),
+            Expanded(
+              child: Text("Monday - Friday, 8:00am - 5:00pm", 
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold),
+            )),
+          ]),
+        ),
+          Center(
+            child: Text(
+                widget.bannerText,
+                style: const TextStyle(
+                  fontFamily: 'Swiss',
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 80,
+                  height: 1.33,
+                  color: Colors.white,
+                  letterSpacing: 2,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(-2, -2),
+                      color: Colors.black,
+                      blurRadius: 3.0
+                    ),
+                    Shadow(
+                      offset: Offset(2, -2),
+                      color: Colors.black,
+                      blurRadius: 3.0
+                    ),
+                    Shadow(
+                      offset: Offset(-2, 2),
+                      color: Colors.black,
+                      blurRadius: 3.0
+                    ),
+                    Shadow(
+                      offset: Offset(2, 2),
+                      color: Colors.black,
+                      blurRadius: 3.0
+                    ),
+                  ],
+                ),
+              ),
+          ),
+          ],
         ),
         SingleChildScrollView(
           controller: widget.controller,
@@ -120,11 +193,11 @@ class _BannerPageContentState extends State<BannerPageContent> {
             alignment: Alignment.topLeft,
             constraints: BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
-              top: widget.offset,
-              left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
-              right: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
+              top: MediaQuery.of(context).size.width/ 3.5,
+              //left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
+              //right: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
             ),
-            padding: EdgeInsets.all(widget.width / 16),
+            //padding: EdgeInsets.all(widget.width / 16),
             decoration: BoxDecoration(
               color: Colors.lightBlue[50],
               boxShadow: const [
