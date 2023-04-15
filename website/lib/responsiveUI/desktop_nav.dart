@@ -4,7 +4,26 @@ import 'package:website/pages/page_data.dart';
 
 AppBar desktopAppbar(BuildContext context) {
   return AppBar(
-    elevation: 30,
+    toolbarHeight: 100,
+    shadowColor: const Color.fromARGB(255, 0, 0, 0),
+    /*title: Column(
+      children:const <Widget> [
+        Center(child: Text("1105 N 1st Street"
+            , style: TextStyle(
+              fontSize: 18,
+              letterSpacing: 1.5,
+            ),)),
+        SizedBox(
+          height: 20,
+        ),
+        Center(child: Text("Monday - Friday 8:00am - 5:00pm"
+            , style: TextStyle(
+              fontSize: 18,
+              letterSpacing: 1.5,
+            ),)),
+      ],
+    ),*/
+    elevation: 100,
     flexibleSpace: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -19,21 +38,44 @@ AppBar desktopAppbar(BuildContext context) {
         ),
       ),
     ),
+    leadingWidth: 400,
     leading: MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () => Navigator.pushNamed(context, "/"),
-        child: Image.asset('images/logo.jpg'),
+        child: Container(
+          margin: const EdgeInsets.only(
+            left: 4,
+            top: 6),
+          child: const Text("Axis\nMotorWerks",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+              fontSize: 32,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+            ),
+          ),
+        ),
       ),
     ),
-    leadingWidth: 100,
     actions: [for (var pageData in pages) TextButton(
-      style: TextButton.styleFrom(foregroundColor: Colors.white70),
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.white70,
+        minimumSize: Size(MediaQuery.of(context).size.width / 6.75, 60),
+        maximumSize: Size(MediaQuery.of(context).size.width / 3, 60),
+        alignment: Alignment.center),
       onPressed:
         ModalRoute.of(context)?.settings.name != pageData.path
         ? () => Navigator.pushNamed(context, pageData.path)
         : null,
-      child: Text(pageData.name),
+      child: Text(pageData.name
+        , style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 2,
+       ),
+      ),
     )],
   );
 }

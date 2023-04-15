@@ -9,7 +9,8 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const BannerPage(
-      bannerSource: "images/sample_mechanic_image.jpg",
+      bannerSource: "images/logo_banner.jpg",
+      bannerText: "Axis Motorwerks",
       children: [
         ReviewCarousel(),
         Text(

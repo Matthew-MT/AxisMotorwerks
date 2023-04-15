@@ -26,9 +26,15 @@ class _AppState extends State<App> {
         GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
         return Scaffold(
           key: scaffoldKey,
-          appBar: ResponsiveNavigationBar(
-            mobileNav: mobileAppbar(buildContext, scaffoldKey),
-            desktopNav: desktopAppbar(buildContext),
+          appBar: 
+          PreferredSize(
+            preferredSize: const Size.fromHeight(100),
+            child: SafeArea(
+              child: ResponsiveNavigationBar(
+                  mobileNav: mobileAppbar(buildContext, scaffoldKey),
+                  desktopNav: desktopAppbar(buildContext),
+              ),
+            ),
           ),
           body: pageData.body,
           drawer: mobileDrawer(buildContext),
