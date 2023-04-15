@@ -18,8 +18,7 @@ class ResponsiveNavigationBar extends StatelessWidget implements PreferredSizeWi
       },
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(56);
-  
 }
