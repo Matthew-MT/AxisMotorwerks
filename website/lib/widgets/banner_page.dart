@@ -61,7 +61,7 @@ class BannerPageContent extends StatefulWidget {
     required this.children,
     super.key,
   }) : offset = min(
-    (imageSize?.height ?? 0) * (width / (imageSize?.width ?? 1)),
+    ((imageSize?.height ?? 0) * width) / (imageSize?.width ?? 1),
     height / 3,
   );
 
@@ -107,6 +107,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: invalid_use_of_protected_member
     if (!widget.controller.hasListeners) widget.controller.addListener(listenToScroll);
     return Stack(
       children: [
