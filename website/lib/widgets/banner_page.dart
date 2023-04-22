@@ -157,8 +157,8 @@ class _BannerPageContentState extends State<BannerPageContent> {
             ),
             Align(
               alignment: AlignmentDirectional(
-                0, top + widget.appBarHeight < widget.height
-                ? ((top + widget.appBarHeight) / widget.height) - 1
+                0, top < widget.height
+                ? ((top - widget.appBarHeight) / (widget.height - widget.appBarHeight)) - 1
                 : 0
               ),
               child: Text(
