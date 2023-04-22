@@ -131,7 +131,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
                 Expanded(
                   child: Text("1105 N 1st St, Grand Junction, CO",
                 textAlign: TextAlign.center,
-                  style: 
+                  style:
                   TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold),)),
