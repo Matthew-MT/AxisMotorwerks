@@ -97,7 +97,6 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
-          height: 450,
           width: MediaQuery.of(context).size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -108,6 +107,7 @@ class Contact extends StatelessWidget {
               Center(
                 child: Text(
                   "HOW TO CONTACT US",
+                  textAlign: TextAlign.center,
                   style: basicHeaderStyle.copyWith(
                     color: Colors.black,
                     fontStyle: FontStyle.italic,
@@ -123,8 +123,11 @@ class Contact extends StatelessWidget {
               const SizedBox( 
                 height: 40,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Wrap(
+                direction: Axis.horizontal,
+                alignment: WrapAlignment.center,
+                runAlignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: const [
                   Text(
                     "HOURS : Monday - Friday , 8am - 5pm",
@@ -160,12 +163,11 @@ class Contact extends StatelessWidget {
               const SizedBox( 
                 height: 40,
               ),
-              const Center(
-                child: Text(
-                    "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
-                    textAlign: TextAlign.center,
-                    style: basicContentStyle,
-                ),
+              const Text(
+                "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: basicContentStyle,
               ),
               const SizedBox(
                 height: 40,
@@ -173,7 +175,6 @@ class Contact extends StatelessWidget {
             ],
           ),
         ),
-        //const GoogleMaps(),
         Container(
           color: const Color.fromARGB(255, 235, 235, 235),      
           width: MediaQuery.of(context).size.width,
