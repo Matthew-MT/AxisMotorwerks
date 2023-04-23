@@ -31,8 +31,8 @@ class _AppState extends State<App> {
             preferredSize: const Size.fromHeight(100),
             child: SafeArea(
               child: ResponsiveNavigationBar(
-                  mobileNav: mobileAppbar(buildContext, scaffoldKey),
-                  desktopNav: desktopAppbar(buildContext),
+                mobileNav: mobileAppbar(buildContext, scaffoldKey),
+                desktopNav: desktopAppbar(buildContext),
               ),
             ),
           ),
