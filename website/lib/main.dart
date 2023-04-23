@@ -24,19 +24,19 @@ class _AppState extends State<App> {
       title: 'Books App',
       routes: {for (var pageData in pages) pageData.path: (BuildContext buildContext) {
         GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-        return Scaffold(
-          key: scaffoldKey,
-          appBar: 
-          PreferredSize(
-            preferredSize: const Size.fromHeight(100),
-            child: SafeArea(
-              child: ResponsiveNavigationBar(
-                mobileNav: mobileAppbar(buildContext, scaffoldKey),
-                desktopNav: desktopAppbar(buildContext),
-              ),
+        final appBar = PreferredSize(
+          preferredSize: const Size.fromHeight(100),
+          child: SafeArea(
+            child: ResponsiveNavigationBar(
+              mobileNav: mobileAppbar(buildContext, scaffoldKey),
+              desktopNav: desktopAppbar(buildContext),
             ),
           ),
-          body: pageData.body,
+        );
+        return Scaffold(
+          key: scaffoldKey,
+          appBar: appBar,
+          body: pageData.builder(appBar.preferredSize.height),
           drawer: mobileDrawer(buildContext),
         );
       }},

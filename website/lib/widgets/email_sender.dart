@@ -32,4 +32,8 @@ Future sendEmail({
     },
     ),
   );
+  name = "";
+  email = "";
+  phone = "";
+  message = "";
 }

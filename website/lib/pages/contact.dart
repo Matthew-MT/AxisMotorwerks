@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website/widgets/google_maps.dart';
+import '../widgets/text_modifier.dart';
 import '../widgets/banner_page.dart';
 import '../widgets/email_form.dart';
 
@@ -10,7 +11,6 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    print(width);
     return BannerPage(
       appBarHeight: appBarHeight,
       bannerSource: "images/porsche.jpg",
@@ -45,6 +45,23 @@ class Contact extends StatelessWidget {
                       blurRadius: 6
                     ),
                   ],
+=======
+    final
+      width = MediaQuery.of(context).size.width;
+    return BannerPage(
+        appBarHeight: appBarHeight,
+        bannerSource: "images/porsche.jpg",
+        bannerText: "CONTACT US",
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  offset: const Offset(0, 5),
+                  color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+                  spreadRadius: 20,
+                  blurRadius: 20
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                 ),
                 width: MediaQuery.of(context).size.width,
                 //height: (MediaQuery.of(context).size.width)/2.25,
@@ -172,6 +189,7 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
+<<<<<<< HEAD
         ),
         Container(
           decoration: BoxDecoration(
@@ -189,10 +207,53 @@ class Contact extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Row(
-                children: const [
-                  SizedBox(
-                    height: 100,
+=======
+          Container(
+            decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 235, 235, 235),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color.fromARGB(255, 48, 48, 48).withOpacity(0.5),
+                  spreadRadius: 6,
+                  blurRadius: 6,
+                ),
+              ],
+            ),
+            height: 450,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget> [ 
+                const SizedBox(
+                  height: 50
+                ),
+                Center(
+                  child: Text(
+                    "HOW TO CONTACT US",
+                    style: basicHeaderStyle.copyWith(
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 48,
+                    ),
                   ),
+                ),
+                const SizedBox(
+                  height: 30
+                ),
+                headerDivider(width, 32),
+                const SizedBox( 
+                height: 40),
+                Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
+                children: const [
+                  Text(
+                    "HOURS : Monday - Friday , 8am - 5pm",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
+                  ),
+<<<<<<< HEAD
                   Expanded(
                     child: Text(
                       "HOURS : Monday - Friday , 8am - 5pm",
@@ -229,12 +290,13 @@ class Contact extends StatelessWidget {
                     ),
                   ),
                   Divider(
+=======
+                  VerticalDivider( 
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                     color: Colors.black,
-                    height: 20,
-                    thickness: 5,
-                    indent: 20,
-                    endIndent: 20,
+                    thickness: 1,
                   ),
+<<<<<<< HEAD
                   Expanded(
                     child: Text(
                       "PHONE : 970-433-7111",
@@ -271,12 +333,20 @@ class Contact extends StatelessWidget {
                     ),
                   ),
                   Divider(
-                    color: Colors.black,
-                    height: 20,
-                    thickness: 5,
-                    indent: 20,
-                    endIndent: 20,
+=======
+                  Text(
+                    "PHONE : 970-433-7111",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
                   ),
+                  VerticalDivider( 
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
+                    color: Colors.black,
+                    thickness: 5,
+                    indent: 0,
+                    endIndent: 0,
+                  ),
+<<<<<<< HEAD
                   Expanded(
                     child: Text(
                       "EMAIL : axismotorwerks@gmail.com",
@@ -311,14 +381,23 @@ class Contact extends StatelessWidget {
                         letterSpacing: 2,
                       ),
                     ),
+=======
+                  Text(
+                    "EMAIL : axismotorwerks@gmail.com" ,
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 60,
-              ),
+              const SizedBox( 
+                height: 40),
+              headerDivider(width, 32),
+              const SizedBox( 
+                height: 40),
               const Center(
                 child: Text(
+<<<<<<< HEAD
                   "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -361,6 +440,25 @@ class Contact extends StatelessWidget {
           child: emailForm(),
         )
       ],
+=======
+                    "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
+                ),
+              ),
+              const SizedBox( 
+                height: 40),
+              ],
+            )
+          ),
+          //const GoogleMaps(),
+          Container(
+            color: const Color.fromARGB(255, 235, 235, 235),      
+            width: MediaQuery.of(context).size.width,
+            child: emailForm(),
+            )
+        ],
+>>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
       //),
     );
   }

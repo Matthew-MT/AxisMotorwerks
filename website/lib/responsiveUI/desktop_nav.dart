@@ -1,28 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:website/pages/page_data.dart';
+import '../widgets/text_modifier.dart';
 
 
 AppBar desktopAppbar(BuildContext context) {
   return AppBar(
     toolbarHeight: 100,
     shadowColor: const Color.fromARGB(255, 0, 0, 0),
-    /*title: Column(
-      children:const <Widget> [
-        Center(child: Text("1105 N 1st Street"
-            , style: TextStyle(
-              fontSize: 18,
-              letterSpacing: 1.5,
-            ),)),
-        SizedBox(
-          height: 20,
-        ),
-        Center(child: Text("Monday - Friday 8:00am - 5:00pm"
-            , style: TextStyle(
-              fontSize: 18,
-              letterSpacing: 1.5,
-            ),)),
-      ],
-    ),*/
     elevation: 100,
     flexibleSpace: Container(
       decoration: const BoxDecoration(
@@ -38,27 +22,26 @@ AppBar desktopAppbar(BuildContext context) {
         ),
       ),
     ),
-    leadingWidth: 400,
+    leadingWidth: 425,
     leading: MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () => Navigator.pushNamed(context, "/"),
-        child: Container(
-          margin: const EdgeInsets.only(
-            left: 4,
-            top: 6),
-          child: const Text("Axis\nMotorWerks",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-              fontSize: 32,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2,
+        child: const Center(
+          child: Text("AXIS\nMotorWerks",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                fontSize: 32,
+                fontFamily: "Swiss",
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2,
+              ),
             ),
           ),
         ),
       ),
-    ),
+
     actions: [for (var pageData in pages) TextButton(
       style: TextButton.styleFrom(
         foregroundColor: Colors.white70,
@@ -74,6 +57,7 @@ AppBar desktopAppbar(BuildContext context) {
           fontSize: 20,
           fontWeight: FontWeight.bold,
           letterSpacing: 2,
+          color: Colors.white,
        ),
       ),
     )],

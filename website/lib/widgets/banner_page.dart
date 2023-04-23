@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
+import '../widgets/text_modifier.dart';
 
 class BannerPage extends StatelessWidget {
   final double appBarHeight;
@@ -78,24 +79,18 @@ class _BannerPageContentState extends State<BannerPageContent> {
   double bannerTop = 0;
 
   void listenToScroll() => setState(() {
-    bannerTop
-      = (widget.imageSize?.height ?? 0)
-      * (widget.width / (widget.imageSize?.width ?? 1))
-      > widget.height
-      ? widget.controller.offset >= widget.offset
-        ? widget.height
-          - (
-            widget.imageSize!.height
-            * (widget.width / (widget.imageSize?.width ?? 1))
-          )
-        : (
-          widget.height
-          - (
-            widget.imageSize!.height
-            * (widget.width / (widget.imageSize?.width ?? 1))
-          )
-        ) * (widget.controller.offset / widget.offset)
-      : 0;
+    bannerTop = (widget.imageSize?.height ?? 0) *
+      (widget.width / (widget.imageSize?.width ?? 1)) >
+      widget.height
+    ? widget.controller.offset >= widget.offset
+      ? widget.height -
+        (widget.imageSize!.height *
+          (widget.width / (widget.imageSize?.width ?? 1)))
+      : (widget.height -
+        (widget.imageSize!.height *
+          (widget.width / (widget.imageSize?.width ?? 1)))) *
+      (widget.controller.offset / widget.offset)
+    : 0;
   });
 
   @override
@@ -127,72 +122,55 @@ class _BannerPageContentState extends State<BannerPageContent> {
               width: widget.width,
               height: 30,
               color: Colors.black.withOpacity(0.5),
-              child: Row(children: const [
-                Expanded(
-                  child: Text("1105 N 1st St, Grand Junction, CO",
-                textAlign: TextAlign.center,
-                  style:
-                  TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),)),
-                Expanded(
-                  child: Text(
-                    "970-433-7111",
-                    textAlign: TextAlign.center,
-                    style: 
-                    TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
+              child: Row(
+                children: const [
+                  Expanded(
+                    child: Text(
+                      "1105 N 1st St, Grand Junction, CO",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Text("Monday - Friday, 8:00am - 5:00pm", 
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-                )),
-              ]),
-            ),
-            Align(
-              alignment: AlignmentDirectional(
-                0, top + widget.appBarHeight < widget.height
-                ? ((top + widget.appBarHeight) / widget.height) - 1
-                : 0
+                  Expanded(
+                    child: Text(
+                      "970-433-7111",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Monday - Friday, 8:00am - 5:00pm",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              child: Text(
-                widget.bannerText,
-                style: const TextStyle(
-                  fontFamily: 'Swiss',
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 80,
-                  height: 1.33,
-                  color: Colors.white,
-                  letterSpacing: 2,
-                  shadows: [
-                    Shadow(
-                      offset: Offset(-2, -2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(2, -2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(-2, 2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(2, 2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                  ],
+            ),
+            Center(
+              child: verticalTextgradient(
+                Text(
+                  widget.bannerText,
+                  style: const TextStyle(
+                    fontFamily: 'Swiss',
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 80,
+                    height: 1.33,
+                    color: Colors.white,
+                    letterSpacing: 2,
+                    shadows: textShadow,
+                  ),
                 ),
               ),
             ),
@@ -202,7 +180,8 @@ class _BannerPageContentState extends State<BannerPageContent> {
           controller: widget.controller,
           child: Container(
             alignment: Alignment.topLeft,
-            constraints: BoxConstraints(minHeight: widget.height - widget.offset),
+            constraints:
+              BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
               top: top,
               //left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
@@ -223,7 +202,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: widget.children
+              children: widget.children,
             ),
           ),
         ),
