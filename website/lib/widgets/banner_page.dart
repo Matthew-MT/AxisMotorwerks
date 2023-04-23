@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
+import '../widgets/text_modifier.dart';
 
 class BannerPage extends StatelessWidget {
   final double appBarHeight;
@@ -126,7 +127,8 @@ class _BannerPageContentState extends State<BannerPageContent> {
           width: widget.width,
           height: 30,
           color: Colors.black.withOpacity(0.5),
-          child: Row(children: const [
+          child: Row(
+            children: const [
             Expanded(
               child: Text("1105 N 1st St, Grand Junction, CO",
             textAlign: TextAlign.center,
@@ -151,40 +153,21 @@ class _BannerPageContentState extends State<BannerPageContent> {
           ]),
         ),
           Center(
-            child: Text(
-                widget.bannerText,
-                style: const TextStyle(
-                  fontFamily: 'Swiss',
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 80,
-                  height: 1.33,
-                  color: Colors.white,
-                  letterSpacing: 2,
-                  shadows: [
-                    Shadow(
-                      offset: Offset(-2, -2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(2, -2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(-2, 2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                    Shadow(
-                      offset: Offset(2, 2),
-                      color: Colors.black,
-                      blurRadius: 3.0
-                    ),
-                  ],
+            child: verticalTextgradient(
+                  Text(
+                  widget.bannerText,
+                  style: const TextStyle(
+                    fontFamily: 'Swiss',
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 80,
+                    height: 1.33,
+                    color: Colors.white,
+                    letterSpacing: 2,
+                    shadows: textShadow,
+                  ),
                 ),
-              ),
+            ),
           ),
           ],
         ),

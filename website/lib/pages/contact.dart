@@ -13,12 +13,9 @@ class Contact extends StatelessWidget {
       width = MediaQuery.of(context).size.width;
     return BannerPage(
         bannerSource: "images/porsche.jpg",
-        bannerText: "Contact Us",
+        bannerText: "CONTACT US",
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(
-              top: 0,
-            ),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -47,13 +44,7 @@ class Contact extends StatelessWidget {
                       child: Text(
                         "We are located at \n 1105 North 1st Street, \n Grand Junction, CO",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: "Swiss",
-                          fontSize: 32,
-                          height: 1.33,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          letterSpacing: 2,
-                        ),
+                        style: basicHeaderStyle,
                       ),
                     ),
                     const SizedBox(
@@ -84,7 +75,7 @@ class Contact extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 200, 200, 200),
+            color: const Color.fromARGB(255, 235, 235, 235),
               boxShadow: [
                 BoxShadow(
                   color: const Color.fromARGB(255, 48, 48, 48).withOpacity(0.5),
@@ -93,96 +84,81 @@ class Contact extends StatelessWidget {
                 ),
               ],
             ),
-            height: 300,
+            height: 450,
             width: MediaQuery.of(context).size.width,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget> [ 
+                const SizedBox(
+                  height: 50
+                ),
+                Center(
+                  child: Text(
+                    "HOW TO CONTACT US",
+                    style: basicHeaderStyle.copyWith(
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 48,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30
+                ),
+                headerDivider(width, 32),
+                const SizedBox( 
+                height: 40),
                 Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  SizedBox(
-                    height: 100,
+                  Text(
+                    "HOURS : Monday - Friday , 8am - 5pm",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
                   ),
-                  Expanded(
-                    child: Text(
-                      "HOURS : Monday - Friday , 8am - 5pm",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: textShadow,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ),
-                  Divider( 
+                  VerticalDivider( 
                     color: Colors.black,
-                    height: 20,
-                    thickness: 5,
-                    indent: 20,
-                    endIndent: 20,
+                    thickness: 1,
                   ),
-                  Expanded(
-                    child: Text(
-                      "PHONE : 970-433-7111",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: textShadow,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
+                  Text(
+                    "PHONE : 970-433-7111",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
                   ),
-                  Divider( 
+                  VerticalDivider( 
                     color: Colors.black,
-                    height: 20,
                     thickness: 5,
-                    indent: 20,
-                    endIndent: 20,
+                    indent: 0,
+                    endIndent: 0,
                   ),
-                  Expanded(
-                    child: Text(
-                      "EMAIL : axismotorwerks@gmail.com" ,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: textShadow,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
+                  Text(
+                    "EMAIL : axismotorwerks@gmail.com" ,
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 60,
-              ),
+              const SizedBox( 
+                height: 40),
+              headerDivider(width, 32),
+              const SizedBox( 
+                height: 40),
               const Center(
                 child: Text(
                     "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      shadows: textShadow,
-                      fontSize: 28,
-                      height: 1.33,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      letterSpacing: 1.5,
-              
-                    ),
+                    style: basicContentStyle,
                 ),
               ),
+              const SizedBox( 
+                height: 40),
               ],
             )
           ),
           //const GoogleMaps(),
           Container(
-            color: const Color.fromARGB(255, 200, 200, 200),      
+            color: const Color.fromARGB(255, 235, 235, 235),      
             width: MediaQuery.of(context).size.width,
             child: emailForm(),
             )

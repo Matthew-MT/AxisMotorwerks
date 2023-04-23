@@ -74,9 +74,11 @@ flutter:
   #   - images/a_dot_ham.jpeg
   
   assets:
+    - assets/images/cars/
     - assets/images/brake_service.jpg
     - assets/images/logo.jpg
     - assets/json/reviews.json
+    - assets/images/cars/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -91,11 +93,14 @@ flutter:
   # example:
   
   fonts:
-    - family: Swiss721BT
+    - family: Swiss
       fonts:
         - asset: assets/fonts/TTF/Swiss721BT-BlackCondensedItalic.ttf
           style: italic
         - asset: assets/fonts/TTF/Swiss721BT-BlackCondensed.ttf
+          weight: 100
+        - asset: assets/fonts/TTF/Swiss721BT-Light.ttf
+          weight: 200
     #- family: Montserrat
      # fonts:
       #  - asset: assets/fonts/Montserrat-Regular.ttf
