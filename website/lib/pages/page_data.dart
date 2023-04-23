@@ -7,16 +7,19 @@ import 'contact.dart';
 class PageData {
   final String name;
   final String path;
-  final Widget body;
+  final Widget Function(double appBarHeight) builder;
 
-  PageData({required this.name, required this.path, required this.body});
-  PageData.basic({required this.name, required this.body}) : path = "/${name.toLowerCase()}";
-  PageData.home({required this.body}) : name = "Home", path = "/";
+  PageData({required this.name, required this.path, required Widget body}) : builder = ((double appBarHeight) => body);
+  PageData.built({required this.name, required this.path, required this.builder});
+  PageData.basic({required this.name, required Widget body}) : path = "/${name.toLowerCase()}", builder = ((double appBarHeight) => body);
+  PageData.basicBuilt({required this.name, required this.builder}) : path = "/${name.toLowerCase()}";
+  PageData.home({required Widget body}) : name = "Home", path = "/", builder = ((double appBarHeight) => body);
+  PageData.homeBuilt({required this.builder}) : name = "Home", path = "/";
 }
 
 final List<PageData> pages = [
-    PageData.home(body: const Homepage(appBarHeight: 56)),
-    PageData.basic(name: "About", body: const About()),
-    PageData.basic(name: "Services", body: const Services()),
-    PageData.basic(name: "Contact", body: const Contact()),
-  ];
+  PageData.homeBuilt(builder: (appBarHeight) => Homepage(appBarHeight: appBarHeight)),
+  PageData.basic(name: "About", body: const About()),
+  PageData.basic(name: "Services", body: const Services()),
+  PageData.basicBuilt(name: "Contact", builder: (appBarHeight) => Contact(appBarHeight: appBarHeight)),
+];

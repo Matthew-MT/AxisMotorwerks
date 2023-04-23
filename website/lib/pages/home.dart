@@ -14,6 +14,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return BannerPage(
+      appBarHeight: appBarHeight,
       bannerSource: "images/hommage.jpg",
       bannerText: "AXIS MotorWerks",
       children: [

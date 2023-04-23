@@ -5,13 +5,15 @@ import '../widgets/banner_page.dart';
 import '../widgets/email_form.dart';
 
 class Contact extends StatelessWidget {
-  const Contact ({super.key});
+  final double appBarHeight;
+  const Contact ({required this.appBarHeight, super.key});
 
   @override
   Widget build(BuildContext context) {
     final
       width = MediaQuery.of(context).size.width;
     return BannerPage(
+        appBarHeight: appBarHeight,
         bannerSource: "images/porsche.jpg",
         bannerText: "CONTACT US",
         children: <Widget>[
