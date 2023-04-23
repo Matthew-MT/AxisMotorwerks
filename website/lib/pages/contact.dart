@@ -15,100 +15,7 @@ class Contact extends StatelessWidget {
       appBarHeight: appBarHeight,
       bannerSource: "images/porsche.jpg",
       bannerText: "Contact Us",
-      //scrollDirection: Axis.vertical,
       children: <Widget>[
-        /*
-        Container(
-          margin: const EdgeInsets.only(
-            top: 0,
-          ),
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                spreadRadius: 6,
-                blurRadius: 6
-              ),
-            ],
-          ),
-          height: (MediaQuery.of(context).size.width)/3.5,
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 112, 112, 112),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                      spreadRadius: 6,
-                      blurRadius: 6
-                    ),
-                  ],
-=======
-    final
-      width = MediaQuery.of(context).size.width;
-    return BannerPage(
-        appBarHeight: appBarHeight,
-        bannerSource: "images/porsche.jpg",
-        bannerText: "CONTACT US",
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(0, 5),
-                  color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 20,
-                  blurRadius: 20
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
-                ),
-                width: MediaQuery.of(context).size.width,
-                //height: (MediaQuery.of(context).size.width)/2.25,
-                child: Opacity(
-                  opacity: 0.5,
-                  child: Image.asset("images/porsche.jpg" ,
-                    fit: BoxFit.fitWidth,
-                    ),
-                )),
-                  const Center(
-                    child: Text(
-                      "Contact Us",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 80,
-                        height: 1.33,
-                        color: Colors.white,
-                        letterSpacing: 2,
-                        shadows: [
-                          Shadow(
-                            offset: Offset(-2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0
-                          ),
-                          Shadow(
-                            offset: Offset(2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0
-                          ),
-                          Shadow(
-                            offset: Offset(-2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0
-                          ),
-                          Shadow(
-                            offset: Offset(2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-            ],
-          )
-        ),*/
         Container(
           margin: const EdgeInsets.only(
             top: 0,
@@ -124,26 +31,15 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
-          // height: (MediaQuery.of(context).size.width) / 3.95,
           width: MediaQuery.of(context).size.width,
           child: Stack(
-            // fit: StackFit.expand,
             children: <Widget>[
-              // SizedBox(
-              //   width: MediaQuery.of(context).size.width,
-              //   child: 
-              // ),
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     repeat: ImageRepeat.repeatY,
                     image: AssetImage("images/carbonfiber.png"),
-                    //  Image.asset(
-                    //   "images/carbonfiber.png",
-                    //   fit: BoxFit.fitWidth,
-                    //   repeat: ImageRepeat.repeatY,
-                    // ),
                   ),
                 ),
                 child: Center(
@@ -189,11 +85,10 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
-<<<<<<< HEAD
         ),
         Container(
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 200, 200, 200),
+            color: const Color.fromARGB(255, 235, 235, 235),
             boxShadow: [
               BoxShadow(
                 color: const Color.fromARGB(255, 48, 48, 48).withOpacity(0.5),
@@ -202,264 +97,89 @@ class Contact extends StatelessWidget {
               ),
             ],
           ),
-          height: 300,
+          height: 450,
           width: MediaQuery.of(context).size.width,
           child: Column(
-            children: <Widget>[
-              Row(
-=======
-          Container(
-            decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 235, 235, 235),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 48, 48, 48).withOpacity(0.5),
-                  spreadRadius: 6,
-                  blurRadius: 6,
-                ),
-              ],
-            ),
-            height: 450,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget> [ 
-                const SizedBox(
-                  height: 50
-                ),
-                Center(
-                  child: Text(
-                    "HOW TO CONTACT US",
-                    style: basicHeaderStyle.copyWith(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget> [ 
+              const SizedBox(
+                height: 50
+              ),
+              Center(
+                child: Text(
+                  "HOW TO CONTACT US",
+                  style: basicHeaderStyle.copyWith(
                     color: Colors.black,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold,
                     fontSize: 48,
-                    ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30
-                ),
-                headerDivider(width, 32),
-                const SizedBox( 
-                height: 40),
-                Row(
+              ),
+              const SizedBox(
+                height: 30
+              ),
+              headerDivider(width, 32),
+              const SizedBox( 
+                height: 40,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                 children: const [
                   Text(
                     "HOURS : Monday - Friday , 8am - 5pm",
                     textAlign: TextAlign.center,
                     style: basicContentStyle,
                   ),
-<<<<<<< HEAD
-                  Expanded(
-                    child: Text(
-                      "HOURS : Monday - Friday , 8am - 5pm",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: [
-                          Shadow(
-                            offset: Offset(-2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(-2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                        ],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ),
-                  Divider(
-=======
                   VerticalDivider( 
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                     color: Colors.black,
                     thickness: 1,
                   ),
-<<<<<<< HEAD
-                  Expanded(
-                    child: Text(
-                      "PHONE : 970-433-7111",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: [
-                          Shadow(
-                            offset: Offset(-2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(-2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                        ],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ),
-                  Divider(
-=======
                   Text(
                     "PHONE : 970-433-7111",
                     textAlign: TextAlign.center,
                     style: basicContentStyle,
                   ),
                   VerticalDivider( 
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                     color: Colors.black,
                     thickness: 5,
                     indent: 0,
                     endIndent: 0,
                   ),
-<<<<<<< HEAD
-                  Expanded(
-                    child: Text(
-                      "EMAIL : axismotorwerks@gmail.com",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        shadows: [
-                          Shadow(
-                            offset: Offset(-2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, -2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(-2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                          Shadow(
-                            offset: Offset(2, 2),
-                            color: Colors.black,
-                            blurRadius: 3.0,
-                          ),
-                        ],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        height: 1.33,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        letterSpacing: 2,
-                      ),
-                    ),
-=======
                   Text(
                     "EMAIL : axismotorwerks@gmail.com" ,
                     textAlign: TextAlign.center,
                     style: basicContentStyle,
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
                   ),
                 ],
               ),
               const SizedBox( 
-                height: 40),
+                height: 40,
+              ),
               headerDivider(width, 32),
               const SizedBox( 
-                height: 40),
+                height: 40,
+              ),
               const Center(
                 child: Text(
-<<<<<<< HEAD
-                  "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    shadows: [
-                      Shadow(
-                        offset: Offset(-2, -2),
-                        color: Colors.black,
-                        blurRadius: 3.0,
-                      ),
-                      Shadow(
-                        offset: Offset(2, -2),
-                        color: Colors.black,
-                        blurRadius: 3.0,
-                      ),
-                      Shadow(
-                        offset: Offset(-2, 2),
-                        color: Colors.black,
-                        blurRadius: 3.0,
-                      ),
-                      Shadow(
-                        offset: Offset(2, 2),
-                        color: Colors.black,
-                        blurRadius: 3.0,
-                      ),
-                    ],
-                    fontSize: 28,
-                    height: 1.33,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    letterSpacing: 1.5,
-                  ),
+                    "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
+                    textAlign: TextAlign.center,
+                    style: basicContentStyle,
                 ),
+              ),
+              const SizedBox(
+                height: 40,
               ),
             ],
           ),
         ),
         //const GoogleMaps(),
         Container(
-          color: const Color.fromARGB(255, 200, 200, 200),
+          color: const Color.fromARGB(255, 235, 235, 235),      
           width: MediaQuery.of(context).size.width,
           child: emailForm(),
-        )
+        ),
       ],
-=======
-                    "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
-                    textAlign: TextAlign.center,
-                    style: basicContentStyle,
-                ),
-              ),
-              const SizedBox( 
-                height: 40),
-              ],
-            )
-          ),
-          //const GoogleMaps(),
-          Container(
-            color: const Color.fromARGB(255, 235, 235, 235),      
-            width: MediaQuery.of(context).size.width,
-            child: emailForm(),
-            )
-        ],
->>>>>>> bd39692b1f5ba98006f9b8ec259c659bf7006779
-      //),
     );
   }
 }
