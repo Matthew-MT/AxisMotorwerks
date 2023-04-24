@@ -80,24 +80,18 @@ class _BannerPageContentState extends State<BannerPageContent> {
   double bannerTop = 0;
 
   void listenToScroll() => setState(() {
-    bannerTop
-      = (widget.imageSize?.height ?? 0)
-      * (widget.width / (widget.imageSize?.width ?? 1))
-      > widget.height
-      ? widget.controller.offset >= widget.offset
-        ? widget.height
-          - (
-            widget.imageSize!.height
-            * (widget.width / (widget.imageSize?.width ?? 1))
-          )
-        : (
-          widget.height
-          - (
-            widget.imageSize!.height
-            * (widget.width / (widget.imageSize?.width ?? 1))
-          )
-        ) * (widget.controller.offset / widget.offset)
-      : 0;
+    bannerTop = (widget.imageSize?.height ?? 0) *
+      (widget.width / (widget.imageSize?.width ?? 1)) >
+      widget.height
+    ? widget.controller.offset >= widget.offset
+      ? widget.height -
+        (widget.imageSize!.height *
+          (widget.width / (widget.imageSize?.width ?? 1)))
+      : (widget.height -
+        (widget.imageSize!.height *
+          (widget.width / (widget.imageSize?.width ?? 1)))) *
+      (widget.controller.offset / widget.offset)
+    : 0;
   });
 
   @override
@@ -121,48 +115,53 @@ class _BannerPageContentState extends State<BannerPageContent> {
       
       children: [
         Stack(
-          children:<Widget>[ Positioned(
-            top: bannerTop,
-            child: widget.bannerImage,
-          ),
-          Container(
-          width: widget.width,
-          height: 30,
-          color: Colors.black.withOpacity(0.5),
-          child: Row(
-            children: const [
-            Expanded(
-              child: Text("1105 N 1st St, Grand Junction, CO",
-            textAlign: TextAlign.center,
-              style: 
-              TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),)),
-            Expanded(
-              child: Text("970-433-7111",
-            textAlign: TextAlign.center,
-              style: 
-              TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold),)),
-            Expanded(
-              child: Text("Monday - Friday, 8:00am - 5:00pm", 
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold),
-            )),
-            
-          ]),
-        ),
-        Align(
-              alignment: AlignmentDirectional(
-                0, top < widget.height
-                ? ((top - widget.appBarHeight) / (widget.height - widget.appBarHeight)) - 1
-                : 0
+          children: <Widget>[
+            Positioned(
+              top: bannerTop,
+              child: widget.bannerImage,
+            ),
+            Container(
+              width: widget.width,
+              height: 30,
+              color: Colors.black.withOpacity(0.5),
+              child: Row(
+                children: const [
+                  Expanded(
+                    child: Text(
+                      "1105 N 1st St, Grand Junction, CO",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "970-433-7111",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Monday - Friday, 8:00am - 5:00pm",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            child: verticalTextgradient(
-                  Text(
+            ),
+            Center(
+              child: verticalTextgradient(
+                Text(
                   widget.bannerText,
                   style: const TextStyle(
                     fontFamily: 'Swiss',
@@ -177,13 +176,16 @@ class _BannerPageContentState extends State<BannerPageContent> {
                 ),
               ),
             ),
+              ),
+            ),
           ],
         ),
         SingleChildScrollView(
           controller: widget.controller,
           child: Container(
             alignment: Alignment.topLeft,
-            constraints: BoxConstraints(minHeight: widget.height - widget.offset),
+            constraints:
+              BoxConstraints(minHeight: widget.height - widget.offset),
             margin: EdgeInsets.only(
               top: top,
               //left: widget.width > 1024 ? (widget.width - 1024) / 4 : 0,
@@ -204,7 +206,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: widget.children
+              children: widget.children,
             ),
           ),
         ),

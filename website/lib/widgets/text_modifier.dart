@@ -28,7 +28,7 @@ const TextStyle basicContentStyle = TextStyle(
   //shadows: textShadow,
   fontWeight: FontWeight.bold,
   fontSize: 18,
-  height: 1.33,
+  // height: 1.33,
   color: Color.fromARGB(255, 0, 0, 0),
   letterSpacing: 2,
 );

@@ -39,21 +39,21 @@ class _GoogleMapsState extends State<GoogleMaps> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: viewMap
-            ? SizedBox(
-              height: 300,
-              width: MediaQuery.of(context).size.width,
-              child: GoogleMap(
-                  onMapCreated: _onMapCreated,
-                  initialCameraPosition: const CameraPosition(
-                    target: LatLng(45.521563, -122.677433),
-                    zoom: 11.0,
-                  ),
-                  markers: Set<Marker>.of(_markers),
-                ),
-            )
-            : const Center(
-                child: Text("No map to display"),
-              ),
-      );
+      ? SizedBox(
+        height: 300,
+        width: MediaQuery.of(context).size.width,
+        child: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: const CameraPosition(
+            target: LatLng(45.521563, -122.677433),
+            zoom: 11.0,
+          ),
+          markers: Set<Marker>.of(_markers),
+        ),
+      )
+      : const Center(
+        child: Text("No map to display"),
+      ),
+    );
   }
 }
