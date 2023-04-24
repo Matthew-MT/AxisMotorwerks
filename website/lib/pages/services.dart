@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:website/widgets/services_list.dart';
 import 'package:website/widgets/text_modifier.dart';
 import 'package:website/widgets/banner_page.dart';
+import '../widgets/page_footer.dart';
 
 class Services extends StatelessWidget {
-  const Services ({super.key});
+  final double appBarHeight;
+  const Services ({required this.appBarHeight, super.key});
 
   @override
   Widget build(BuildContext context) {
-    final
-      width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return BannerPage(
+        appBarHeight: appBarHeight,
         bannerSource: "images/toyota.jpg",
         bannerText: "OUR SERVICES",
         children: <Widget>[
@@ -66,6 +68,7 @@ class Services extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: servicesList(context)
           ),
+          footer(context),
         ],
     );
   }

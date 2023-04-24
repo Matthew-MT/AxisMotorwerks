@@ -7,13 +7,14 @@ import '../widgets/content.dart';
 
 
 class About extends StatelessWidget {
-  const About ({super.key});
+  final double appBarHeight;
+  const About ({required this.appBarHeight ,super.key});
 
   @override
   Widget build(BuildContext context) {
-    final
-      width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     return BannerPage(
+        appBarHeight: appBarHeight,
         bannerSource: "images/bmw.jpg",
         bannerText: "ABOUT US",
         children: <Widget>[

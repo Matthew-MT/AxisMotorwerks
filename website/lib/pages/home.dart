@@ -4,6 +4,7 @@ import '../widgets/banner_page.dart';
 import '../widgets/reviews.dart';
 import '../widgets/car_display.dart';
 import '../widgets/text_modifier.dart';
+import '../widgets/page_footer.dart';
 
 class Homepage extends StatelessWidget {
   final double appBarHeight;
@@ -15,7 +16,7 @@ class Homepage extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return BannerPage(
       appBarHeight: appBarHeight,
-      bannerSource: "images/hommage.jpg",
+      bannerSource: "images/amg_banner.jpg",
       bannerText: "AXIS MotorWerks",
       children: [
         Container(
@@ -23,7 +24,7 @@ class Homepage extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   offset: const Offset(0, 0),
-                  color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
                   spreadRadius: 20,
                   blurRadius: 20
                 ),
@@ -95,7 +96,8 @@ class Homepage extends StatelessWidget {
           ),
         ),
         const ReviewCarousel(),
-        const Divider(),
+        //const Divider(),
+        footer(context),
       ]
     );
   }
