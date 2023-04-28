@@ -81,7 +81,7 @@ class Homepage extends StatelessWidget {
                 height: 50,
               ),
               Text(
-                "VEHICLES WE CURRENTLY SERVICE",
+                "VEHICLES MAKES WE CURRENTLY SERVICE",
                 textAlign: TextAlign.center,
                 style: basicHeaderStyle.copyWith(
                   color: Colors.black,

@@ -21,7 +21,7 @@ class Services extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 offset: const Offset(0, 5),
-                color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+                color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
                 spreadRadius: 20,
                 blurRadius: 20
               ),
@@ -54,6 +54,10 @@ class Services extends StatelessWidget {
           )
         ),
         Container(
+          padding: EdgeInsets.only(
+            left: width * 0.1,
+            right: width * 0.1,
+          ),
           decoration: BoxDecoration(
           color: const Color.fromARGB(255, 235, 235, 235),
             boxShadow: [
@@ -64,10 +68,11 @@ class Services extends StatelessWidget {
               ),
             ],
           ),
-          height: 4000,
+          height: 2800,
           width: MediaQuery.of(context).size.width,
           child: servicesList(context)
         ),
+        footer(context)
       ],
     );
   }

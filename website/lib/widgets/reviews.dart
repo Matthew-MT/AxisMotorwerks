@@ -82,7 +82,7 @@ class _ReviewCarouselState extends State<ReviewCarousel> with TickerProviderStat
                       color: Colors.black54,
                       spreadRadius: 5,
                       blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: Offset(0, 4), // changes position of shadow
                     ),
                   ],
                 ),
@@ -119,7 +119,7 @@ class _ReviewCarouselState extends State<ReviewCarousel> with TickerProviderStat
                             child: Text(reviews[current]["comment"],
                               style: const TextStyle(
                                 fontSize: 16,
-                                letterSpacing: 2,
+                                letterSpacing: 1,
                               ),
                             ),
                           ),

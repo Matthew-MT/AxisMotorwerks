@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:website/pages/page_data.dart';
+import '../widgets/text_modifier.dart';
 
   AppBar mobileAppbar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
     return AppBar(
@@ -26,14 +27,7 @@ import 'package:website/pages/page_data.dart';
           },
       ),
       leadingWidth: 100,
-      actions:
-        [GestureDetector(
-          onTap: () => Navigator.pushNamed(context, "/"),
-          child: Image.asset(
-            'images/logo.jpg',
-          ),
-        ),]
-, 
+
     );
   }
   
@@ -42,11 +36,33 @@ import 'package:website/pages/page_data.dart';
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.black,
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Color.fromARGB(255, 0, 0, 0),
+                  Color.fromARGB(255, 99, 0, 0),
+                  Color.fromARGB(255, 252, 47, 47),
+                  Color.fromARGB(255, 255, 255, 92),
+                ],
+             ),
             ),
-            child: Image.asset('images/logo.jpg'),
+            child: Center(
+              child: Text("AXIS\nMotorWerks",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                  fontSize: 32,
+                  fontFamily: "Swiss",
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                  shadows: textShadow,
+                  ),
+              ),
+            ),
           ),
           for (var pageData in pages) ListTile(
             title: Text(pageData.name),

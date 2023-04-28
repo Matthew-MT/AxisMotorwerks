@@ -8,48 +8,39 @@ Column servicesList(BuildContext context)
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-      const SizedBox(height: 80),
-      const ServicesTextFormat(
-        title: "Brake Pads and Rotors",
-        description: 
-        """
-        
-        Brake pads are the friction material that rubs 
-        against the rotor to slow the vehicle down.
-        They wear out over time and need to be replaced.
-        """,
-        image: Image(image: AssetImage("../assets/images/services/rotors.png")),
+    children: const [
+      ServicesTextFormat(
+      title: "Brake Pads and Rotors",
+      description: 
+      """
+      
+      Brake pads are the friction material that rubs 
+      against the rotor to slow the vehicle down.
+      They wear out over time and need to be replaced.
+      """,
+      image: Image(image: AssetImage("../assets/images/services/rotors.png")),
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
+      ServicesTextFormat(
         title: "Brake Fluid Flushes",
         description: 
         """
+
         Brake fluid is the hydraulic fluid that transfers
         pressure from the brake pedal to the brake calipers.
         It needs to be flushed and replaced every 2-3 years.
         """, 
         image: Image(image: AssetImage("../assets/images/services/brake_fluid.png"))
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
-        title: "Air and Cabin Filters",
-        description: 
-        """
-        Air filters are used to clean the air that enters
-        the engine. They need to be replaced every 15,000 miles.
-        """,
-        image: Image(image: AssetImage("../assets/images/services/air_filter.png")),
+      ServicesTextFormat(
+      title: "Air and Cabin Filters",
+      description: 
+      """
+      Air filters are used to clean the air that enters
+      the engine. They need to be replaced every 15,000 miles.
+      """,
+      image: Image(image: AssetImage("../assets/images/services/air_filter.png")),
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
+      ServicesTextFormat(
         title: "Cooling System Repairs",
         description: 
         """
@@ -59,36 +50,27 @@ Column servicesList(BuildContext context)
         """,
         image: Image(image: AssetImage("../assets/images/services/cooling_system.png")),
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
-        title: "Check Engine Light Diagnostics",
-        description: 
-        """
-        The check engine light is used to indicate that 
-        there is a problem with the fundamental elements
-        of the engine, we will preform a diagnostic to
-        find what is wrong with the vehicle.
-        """,
-        image: Image(image: AssetImage("../assets/images/services/check_engine.png")),
-      ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
-        title: "Electrical Troubleshooting",
-        description: 
-        """
-        Electrical problems can be difficult to diagnose.
-        They need to be diagnosed and repaired.
-        """,
-        image: Image(image: AssetImage("../assets/images/services/electronics.png")),
-      ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
+      ServicesTextFormat(
+       title: "Check Engine Light Diagnostics",
+       description: 
+       """
+       The check engine light is used to indicate that 
+       there is a problem with the fundamental elements
+       of the engine, we will preform a diagnostic to
+       find what is wrong with the vehicle.
+       """,
+       image: Image(image: AssetImage("../assets/images/services/check_engine.png")),
+        ),
+        ServicesTextFormat(
+       title: "Electrical Troubleshooting",
+       description: 
+       """
+       Electrical problems can be difficult to diagnose.
+       They need to be diagnosed and repaired.
+       """,
+       image: Image(image: AssetImage("../assets/images/services/electronics.png")),
+       ),
+      ServicesTextFormat(
         title: "Suspension Repairs",
         description: 
         """
@@ -96,23 +78,17 @@ Column servicesList(BuildContext context)
         bump-free ride. It needs to be inspected and repaired.
         """,
         image: Image(image: AssetImage("../assets/images/services/suspension.png")),
-      ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
-        title: "Window and Door Repairs",
-        description: 
-        """
-        Windows and doors are used to keep the vehicle sealed.
-        They need to be inspected and repaired.
-        """,
-        image: Image(image: AssetImage("../assets/images/services/door.png")),
-      ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
+        ),
+      ServicesTextFormat(
+          title: "Window and Door Repairs",
+          description: 
+          """
+          Windows and doors are used to keep the vehicle sealed.
+          They need to be inspected and repaired.
+          """,
+          image: Image(image: AssetImage("../assets/images/services/door.png")),
+        ),
+      ServicesTextFormat(
         title: "Fuel System Repairs",
         description: 
         """
@@ -121,10 +97,7 @@ Column servicesList(BuildContext context)
         """,
         image: Image(image: AssetImage("../assets/images/services/fuel_system.png")),
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
-      const ServicesTextFormat(
+      ServicesTextFormat(
         title: "Leak Detection and Repair",
         description: 
         """
@@ -133,9 +106,6 @@ Column servicesList(BuildContext context)
         """,
         image: Image(image: AssetImage("../assets/images/services/leak.png")),
       ),
-      const SizedBox(height: 40),
-      headerDivider(width, 16),
-      const SizedBox(height: 40),
       const ServicesTextFormat(
         title: "Transmission Flush",
         description: 
@@ -148,34 +118,3 @@ Column servicesList(BuildContext context)
       ],
     );
   }
-
-
-
-
-  /*ServicesTextFormat(currentText: "A Service"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "B Service"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "All recommended scheduled maintenance services"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Brake pad and rotor replacement"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Brake fluid flushes"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Air and cabin filter replacement"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Cooling system repairs"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Check Engine Light diagnostics"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Electrical troubleshooting"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Suspension repairs"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Window and door repairs"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Fuel system repairs"),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Leak detection and repair (oil, coolant, brake, power steering fluid, vacuum)",),
-              ServicesDivider(),
-              ServicesTextFormat(currentText: "Transmission Flush"), */

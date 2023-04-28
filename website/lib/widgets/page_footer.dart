@@ -17,7 +17,7 @@ Container footer(BuildContext context) {
           ),
         ],
       ),
-      height: (MediaQuery.of(context).size.width)/6,
+      height: (MediaQuery.of(context).size.width)/8,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: <Widget>[
@@ -30,11 +30,35 @@ Container footer(BuildContext context) {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Text(
-                "©2023 All Rights Reserved | Privacy Policy",
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  "©2023 All Rights Reserved | Privacy Policy",
+                  style: basicContentStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
               ),
-
+              Center(
+                child: Text(
+                  "Footer Content",
+                  style: basicContentStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              Center(
+                child: Text(
+                  "More Footer Content",
+                  style: basicContentStyle.copyWith(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
             ],
           ),
         ],

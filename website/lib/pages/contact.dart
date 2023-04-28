@@ -3,6 +3,7 @@ import 'package:website/widgets/google_maps.dart';
 import '../widgets/text_modifier.dart';
 import '../widgets/banner_page.dart';
 import '../widgets/email_form.dart';
+import '../widgets/page_footer.dart';
 
 class Contact extends StatelessWidget {
   final double appBarHeight;
@@ -24,7 +25,7 @@ class Contact extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 offset: const Offset(0, 5),
-                color: const Color.fromARGB(255, 255, 255, 255)
+                color: const Color.fromARGB(255, 0, 0, 0)
                   .withOpacity(0.5),
                 spreadRadius: 20,
                 blurRadius: 20,
@@ -48,16 +49,16 @@ class Contact extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     runAlignment: WrapAlignment.center,
                     crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 120,
+                    runSpacing: 20,
                     children: <Widget>[
-                      const Text(
+                      Text(
                         "We are located at \n 1105 North 1st Street, \n Grand Junction, CO",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: "Montserrat",
+                        style: basicHeaderStyle.copyWith(
                           fontSize: 32,
-                          height: 1.33,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          letterSpacing: 2,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                       Container(
@@ -128,27 +129,21 @@ class Contact extends StatelessWidget {
                 alignment: WrapAlignment.center,
                 runAlignment: WrapAlignment.center,
                 crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 120,
+                runSpacing: 40,
                 children: const [
                   Text(
                     "HOURS : Monday - Friday , 8am - 5pm",
                     textAlign: TextAlign.center,
                     style: basicContentStyle,
                   ),
-                  VerticalDivider( 
-                    color: Colors.black,
-                    thickness: 1,
-                  ),
+                  
                   Text(
                     "PHONE : 970-433-7111",
                     textAlign: TextAlign.center,
                     style: basicContentStyle,
                   ),
-                  VerticalDivider( 
-                    color: Colors.black,
-                    thickness: 5,
-                    indent: 0,
-                    endIndent: 0,
-                  ),
+                
                   Text(
                     "EMAIL : axismotorwerks@gmail.com" ,
                     textAlign: TextAlign.center,
@@ -180,6 +175,7 @@ class Contact extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: emailForm(),
         ),
+        footer(context),
       ],
     );
   }

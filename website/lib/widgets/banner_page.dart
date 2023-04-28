@@ -25,7 +25,7 @@ class BannerPage extends StatelessWidget {
       bannerSource,
       width: width,
       fit: BoxFit.cover,
-      opacity: const AlwaysStoppedAnimation(.85),
+      opacity: const AlwaysStoppedAnimation(.75),
     );
     final controller = ScrollController();
 
@@ -160,7 +160,7 @@ class _BannerPageContentState extends State<BannerPageContent> {
               ),
             ),
             Center(
-              child: verticalTextgradient(
+              child: //verticalTextgradient(
                 Text(
                   widget.bannerText,
                   style: const TextStyle(
@@ -172,14 +172,10 @@ class _BannerPageContentState extends State<BannerPageContent> {
                     color: Colors.white,
                     letterSpacing: 2,
                     shadows: textShadow,
-                  ),
+                //  ),
                 ),
               ),
             ),
-              ),
-            ),
-          ],
-        ),
         SingleChildScrollView(
           controller: widget.controller,
           child: Container(
@@ -207,8 +203,10 @@ class _BannerPageContentState extends State<BannerPageContent> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: widget.children,
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ],
     );

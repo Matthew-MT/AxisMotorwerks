@@ -14,47 +14,43 @@ class ServicesTextFormat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return Container(
-      padding: EdgeInsets.only(
-        left:width/8,
-        right:width/8,),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+    //final width = MediaQuery.of(context).size.width;
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
               SizedBox(
-                width: 100,
-                height: 100,
+                width: 150,
+                height: 150,
                 child: image,
               ),
-              SizedBox(width: width/32),
-                Center(
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.start,
-                      style: basicHeaderStyle.copyWith(
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              Center(
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.start,
+                    style: basicHeaderStyle.copyWith(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
-              ],
-            ),
-           const SizedBox(height: 40),
+                ),
             Center(
               child: Text(
                   description,
-                  textAlign: TextAlign.left,
-                  style: basicContentStyle,
+                  textAlign: TextAlign.start,
+                  style: basicContentStyle.copyWith(
+                    fontSize: 18
+                  ),
                 ),
             ),
+              ],
+            ),
         ],
-      ),
     );
   }
 }
