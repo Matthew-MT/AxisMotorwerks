@@ -162,7 +162,7 @@ class Contact extends StatelessWidget {
                 "If it is after hours, please fill out the form below and we will get back to you as soon as possible.",
                 textAlign: TextAlign.center,
                 softWrap: true,
-                style: basicContentStyle,
+                style: basicContentStyle
               ),
               const SizedBox(
                 height: 40,
@@ -171,6 +171,9 @@ class Contact extends StatelessWidget {
           ),
         ),
         Container(
+          padding: const EdgeInsets.only(
+            left:128,
+            right:128),
           color: const Color.fromARGB(255, 235, 235, 235),      
           width: MediaQuery.of(context).size.width,
           child: emailForm(),
